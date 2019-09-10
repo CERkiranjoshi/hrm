@@ -1,0 +1,15 @@
+<h1 mat-dialog-title><b>Sort columns</b>
+  <button mat-icon-button  title="Cancel" style="float: right;" (click)="cancel()">
+    <mat-icon color="warn">cancel</mat-icon>
+  </button>
+  <button mat-icon-button  title="Apply sorting" style="float: right;" (click)="saveData()">
+    <mat-icon color="accent">save</mat-icon>
+  </button>
+</h1>
+<div mat-dialog-content fxLayout="row">
+  <ul class="custom-scrollbar" fxFlex="100">
+    <div cdkDropList class="sort-data-list" (cdkDropListDropped)="drop($event)">
+      <div class="sort-data-box" *ngFor="let val of data;let i = index" cdkDrag>{{i+1}} : {{val.name}}</div>
+    </div>
+  </ul>
+</div>

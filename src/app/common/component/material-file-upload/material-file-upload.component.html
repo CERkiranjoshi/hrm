@@ -1,0 +1,38 @@
+<section class="upload-section p-10 mt-10">
+  <section fxLayout="row" fxFlexFill fxLayoutAlign="baseline baseline" fxLayoutGap="20px" fxLayout.xs="column">
+    <mat-form-field fxFlex="90" floatLabel="never">
+      <input matInput placeholder="Upload Document" value="Upload Document" type="text" readonly>
+      <span class="upload-button" (click)="onClick()" matSuffix>Browse document</span>
+      <span matPrefix class="file-upload-prefix mr-10"><mat-icon color="primary">cloud_upload</mat-icon></span>
+    </mat-form-field>
+    <button type="button" mat-button title="Clear All" color="primary" [disabled]="buttonRemoveDisabled" (click)="removeAll()">
+      <mat-icon>clear_all</mat-icon> Clear All
+    </button>
+    <button type="button"  mat-button title="Close" color="warn" (click)="removeAll()">
+      <mat-icon>cancel</mat-icon> Close
+    </button>
+  </section>
+  <section *ngIf="files.length>0" fxLayout="row" fxFlexFill fxLayoutAlign="center center" fxLayout.xs="column">
+    <mat-list fxFlex="100">
+      <mat-list-item *ngFor="let file of files" [@fadeInOut]="file.state">
+        <h3 matLine> {{file.data.name}} </h3>
+        <p matLine>
+          <span>
+            <mat-progress-bar [value]="file.progress"></mat-progress-bar>
+          </span>
+          <span>
+            <a title="Retry" class="retry retry-icon" class="retry" (click)="retryFile(file)" *ngIf="file.canRetry">
+              <mat-icon>refresh</mat-icon>
+            </a>
+          </span>
+          <span *ngIf="file.error" class="error-display mt-5">{{file.error_message}}</span>
+          <span *ngIf="file.success" class="success-display mt-5">{{file.success_message}}</span>
+        </p>
+        <mat-icon class="cancel cancel-icon" matListIcon (click)="cancelFile(file)" *ngIf="file.canCancel">
+          cancel
+        </mat-icon>
+      </mat-list-item>
+    </mat-list>
+  </section>
+  <input type="file" id="fileUpload" name="fileUpload" multiple="multiple" accept="{{accept}}" style="display:none;" />
+</section>

@@ -1,0 +1,9 @@
+<section>
+  <h1 class="mb-10" mat-dialog-title>{{data.title}}</h1>
+  <div mat-dialog-content>
+    <pre>{{ displayData | json }}</pre>
+  </div>
+  <div mat-dialog-actions>
+    <button mat-button [mat-dialog-close] color="warn" cdkFocusInitial>CLOSE</button>
+  </div>
+</section>

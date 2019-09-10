@@ -1,0 +1,108 @@
+@import '../../../css/variable.scss';
+a {
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: -0.2px;
+    color: #ffffff;
+    opacity: 0.6;
+    padding: 8px;
+}
+
+.user-display{
+    font-size: 12px;
+    font-style: normal;
+    font-stretch: normal;
+    letter-spacing: -0.2px;
+    color: #ffffff;
+}
+.user-display-container{
+    height: 50px;
+    justify-content: space-evenly;
+}
+.user-icon{
+    display: flex;
+    padding-right: 20px;
+    justify-content: flex-end;
+    border-right: 1px solid $bottom-underline-border;
+}
+
+// .stroke ul li:hover{
+//   background-image: url(../../../assets/img/rectangle-14.png);
+// }
+.stroke ul li a {
+    position: relative;
+}
+
+a:hover,
+a:active,
+a.active {
+    opacity: 1 !important;
+    font-weight: bold;
+}
+
+.stroke ul li:before {
+    background: #fff;
+    opacity: 0.1;
+}
+
+.stroke ul li a,
+.stroke ul li a:after,
+.stroke ul li a:before {
+    transition: all .3s;
+}
+
+.stroke ul li a:after,
+.stroke ul li a.active:after {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 0%;
+    content: '';
+    color: transparent;
+    background: #fff;
+    height: 2px;
+}
+
+.stroke ul li a:hover:after,
+.stroke ul li a.active:after {
+    width: 30px;
+    color: #fff;
+}
+
+.logo-container {
+    opacity: 1 !important;
+    padding: 0;
+    display: block;
+}
+
+.navigation-items {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    height: 50px;
+}
+
+.nav-caption {
+    display: inline-block;
+    padding-left: 6px;
+}
+
+.mat-toolbar-single-row {
+    height: 50px;
+}
+
+
+
+// .Rectangle-14 {
+//   width: 136px;
+//   height: 50px;
+//   object-fit: contain;
+//   opacity: 0.1;
+//   background-color: #ffffff;
+// }

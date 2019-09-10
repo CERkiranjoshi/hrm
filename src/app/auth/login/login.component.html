@@ -1,0 +1,37 @@
+<section class="container">
+  <app-title title="LOGIN"></app-title>
+  <form class="login-form" fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="15px" [formGroup]="loginForm"
+    (ngSubmit)="signinUser()" novalidate>
+    <!-- <mat-form-field>
+      <input type="text" matInput placeholder="Mobile Number" [formControl]="mobile" [errorStateMatcher]="matcher"
+        required>
+      <mat-hint><strong>Mobile number:</strong> 942312****</mat-hint>
+      <mat-error *ngIf="mobile.hasError('invalidNumber') &&  !mobile.hasError('required')">
+        Please enter a valid mobile number.
+      </mat-error>
+      <mat-error *ngIf="mobile.hasError('required')">
+        Mobile number is <strong>required.</strong>
+      </mat-error>
+    </mat-form-field> -->
+    <mat-form-field>
+      <input type="text" matInput placeholder="Username" [formControl]="username" autocomplete="off" [errorStateMatcher]="matcher"
+        required>
+      <mat-error *ngIf="username.hasError('required')">
+        Username is <strong>required.</strong>
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <input type="password" name="password" [type]="hide ? 'password' : 'text'" matInput placeholder="Password"
+        [formControl]="password" autocomplete="off" [errorStateMatcher]="matcher" required>
+      <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+      <mat-hint>Password must be at least 6 characters in length.</mat-hint>
+      <mat-error *ngIf="password.hasError('minlength') &&  !password.hasError('required')">
+        Password must be at least 6 characters in length.
+      </mat-error>
+      <mat-error *ngIf="password.hasError('required')">
+        Password is <strong>required.</strong>
+      </mat-error>
+    </mat-form-field>
+    <button class="mt-30" type="submit" mat-raised-button color="primary" [disabled]="loginForm.invalid">Login</button>
+  </form>
+</section>

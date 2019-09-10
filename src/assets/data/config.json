@@ -1,0 +1,118 @@
+{
+  "url": "http://localhost:8000/",
+  "currencey": "INR",
+  "client": "hrm",
+  "pageSize": 20,
+  "documentUpload": true,
+  "uploadConifg": {
+    "allowedType": ".pdf, .png, .jpeg, .jpg, .bmp, .tif, .zip, .tiff",
+    "maxUploadSize": "50"
+  },
+  "pages": [
+    {
+      "url": "home",
+      "name": "Homepage",
+      "active": false,
+      "departmentFilterLists": [
+        {
+          "key": "",
+          "value": "All"
+        },
+        {
+          "key": "IT",
+          "value": "Information Technology"
+        },
+        {
+          "key": "FINANCE",
+          "value": "Finance"
+        },
+        {
+          "key": "HR",
+          "value": "Human Resource"
+        },
+        {
+          "key": "SALES",
+          "value": "Sales & Marketing"
+        },
+        {
+          "key": "ADMIN",
+          "value": "Admin Department"
+        }
+      ],
+      "displayColumns": [
+        {
+          "name": "Employee Name",
+          "key": "name",
+          "display": "text",
+          "sort": false,
+          "search": true,
+          "searchBy": "text",
+          "searchByVal": ""
+        },
+        {
+          "name": "Email",
+          "key": "email",
+          "display": "text",
+          "sort": false,
+          "search": true,
+          "searchBy": "text",
+          "searchByVal": ""
+        },
+        {
+          "name": "Phone",
+          "key": "phone",
+          "display": "text",
+          "sort": false,
+          "search": true,
+          "searchBy": "text",
+          "searchByVal": ""
+        },
+        {
+          "name": "Status",
+          "key": "status",
+          "display": "text",
+          "sort": false,
+          "search": true,
+          "searchBy": "text",
+          "searchByVal": ""
+        },
+        {
+          "name": "Department",
+          "key": "department",
+          "display": "text",
+          "sort": false,
+          "search": true,
+          "searchBy": "dropdown",
+          "searchByVal": "departmentFilterLists"
+        },
+        {
+          "name": "Manager",
+          "key": "manager",
+          "display": "text",
+          "sort": false,
+          "search": true,
+          "searchBy": "text",
+          "searchByVal": ""
+        },
+        {
+          "name": "Leaves",
+          "key": "leaves",
+          "display": "text",
+          "sort": false,
+          "search": false,
+          "searchBy": "text",
+          "searchByVal": ""
+        },
+        {
+          "name": "Joined Date",
+          "key": "joined",
+          "display": "text",
+          "sort": true,
+          "search": false,
+          "searchBy": "text",
+          "searchByVal": ""
+        }
+      ]
+    }
+  ]
+}

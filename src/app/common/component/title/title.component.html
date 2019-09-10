@@ -1,0 +1,16 @@
+<section *ngIf="!showBackButton" class="title" fxLayout="column" fxLayoutAlign="center center">
+  <div class="title-text">{{title}}</div>
+  <div class="main-title-text">{{title}}</div>
+  <span class="underline-border"></span>
+</section>
+<section *ngIf="showBackButton" fxLayout="row" fxLayoutGap="20px">
+  <section fxFlex="33.33" fxLayoutAlign="flex-start center">
+      <span class="back-button" (click)="backToPrevious()" ><mat-icon>arrow_back_ios</mat-icon> Back</span> 
+  </section> 
+  <section fxFlex="33.33" class="title" fxLayout="column" fxLayoutAlign="center center">
+      <div class="title-text">{{title}}</div>
+      <div class="main-title-text">{{title}}</div>
+      <span class="underline-border"></span>
+  </section>
+  <section fxFlex="33.33"></section>
+</section>

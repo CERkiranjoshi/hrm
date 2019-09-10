@@ -1,0 +1,30 @@
+<div class="text-center full-view-docuemnts">
+  <button class="ml-5 mr-5 close-btn" type="button" mat-button color="accent" title="Close" (click)="backToPrevious()">
+    <mat-icon>close</mat-icon>
+  </button>
+  <div id="custom-docs-view" class="custom-docs-view custom-scrollbar">
+    <div class="mrb-5 images" *ngFor="let item of documentList; let i = index">
+      <img (mouseover)="selectDocument(i)" class="images" id="image-no-{{i}}" [src]="item.document"
+        [style.transform]="'rotate(' + item.rotate + 'deg)'" [ngClass]="{'selected-document': (i == selectedDocIndex) }"
+        alt="">
+    </div>
+  </div>
+  <div class="document-viewer-btn noselect">
+    <span class="clr-white"> Page: {{selectedDocIndex+1}} / {{documentList.length}} </span>
+    <button class="ml-5 mr-5" type="button" mat-button color="accent" title="Zoom In" (click)="zoom(1.1)">
+      <mat-icon>zoom_in</mat-icon>
+    </button>
+    <button class="ml-5 mr-5" type="button" mat-button color="accent" title="Zoom Out" (click)="zoom(0.9)">
+      <mat-icon>zoom_out</mat-icon>
+    </button>
+    <button class="ml-5 mr-5" type="button" mat-button color="accent" title="Rotate Left" (click)="rotate('left')">
+      <mat-icon>rotate_left</mat-icon>
+    </button>
+    <button class="ml-5 mr-5" type="button" mat-button color="accent" title="Rotate Right" (click)="rotate('right')">
+      <mat-icon>rotate_right</mat-icon>
+    </button>
+    <button class="ml-5 mr-5" type="button" mat-button color="accent" title="Reset" (click)="reset()">
+      <mat-icon>loop</mat-icon>
+    </button>
+  </div>
+</div>

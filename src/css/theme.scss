@@ -1,0 +1,213 @@
+@import '~@angular/material/theming';
+@import 'variable.scss';
+// @import '~@angular/cdk/overlay-prebuilt.css';
+// @import '@angular/material/prebuilt-themes/indigo-pink.css';
+
+
+//https://www.htmlcsscolor.com/hex/2DAAE0
+@mixin app-bg-theme($theme) {
+    $primary: map-get($theme, primary);
+    $accent: map-get($theme, accent);
+  
+    .mat-app-background {
+    //   background: linear-gradient(to bottom right, mat-color($primary, 50), mat-color($primary, 900)) !important;
+      background: $gradient;
+      height: 100vh;
+      widows: 100vw;
+    }
+  }
+  
+  @mixin toolbar-theme($theme) {
+      $primary: map-get($theme, primary);
+      $accent: map-get($theme, accent);
+    
+      .mat-toolbar.mat-primary {
+        // background: linear-gradient(to right, mat-color($primary), mat-color($accent)) !important;
+        background: $gradient;
+      }
+      .mat-toolbar.mat-accent {
+        // background: linear-gradient(to right, mat-color($accent), mat-color($primary)) !important;
+        background: $gradient;
+      }
+    }
+
+@include mat-core();
+
+// $mat-mauve: (
+//     50 : #b2d9dd,
+//     100 : #99cdd2,
+//     200 : #7fc1c7,
+//     300 : #4ca8b0,
+//     400 : #329ba5,
+//     500 : #198f9a,
+//     600 : #007580,
+//     700 : #006872,
+//     800 : #005b64,
+//     900 : #004e55,
+//     A100 : #A7FFEB,
+//     A200 : #64FFDA,
+//     A400 : #1DE9B6,
+//     A700 : #00BFA5,
+//     contrast: (
+//         50 : #000000,
+//         100 : #000000,
+//         200 : #000000,
+//         300 : #000000,
+//         400 : #ffffff,
+//         500 : #ffffff,
+//         600 : #ffffff,
+//         700 : #ffffff,
+//         800 : #ffffff,
+//         900 : #ffffff,
+//         A100 : #000000,
+//         A200 : #000000,
+//         A400 : #ffffff,
+//         A700 : #ffffff,
+//     )
+// );
+
+// $mat-mauvelight: (
+//     50 : #fcb799,
+//     100 : #fba885,
+//     200 : #fa9a70,
+//     300 : #fa8b5c,
+//     400 : #f97d48,
+//     500 : #f96f34,
+//     600 : #e0632e,
+//     700 : #c75829,
+//     800 : #ae4d24,
+//     900 : #95421f,
+//     A100 : #FF9E80,
+//     A200 : #FF6E40,
+//     A400 : #FF3D00,
+//     A700 : #DD2C00,
+//     contrast: (
+//         50 : #000000,
+//         100 : #000000,
+//         200 : #000000,
+//         300 : #000000,
+//         400 : #000000,
+//         500 : #000000,
+//         600 : #000000,
+//         700 : #000000,
+//         800 : #000000,
+//         900 : #000000,
+//         A100 : #000000,
+//         A200 : #000000,
+//         A400 : #000000,
+//         A700 : #000000,
+//     )
+// );
+
+$mat-mauve: (
+    50 : #fabe95,
+    100 : #f8a770,
+    200 : #f79c5d,
+    300 : #f6904b,
+    400 : #f47a25,
+    500 : #F58538,
+    600 : #e7650c,
+    700 : #d45d0b,
+    800 : #c1540a,
+    900 : #9c4408,
+    A100 : #ff94d8,
+    A200 : #ff61c6,
+    A400 : #ff2eb3,
+    A700 : #ff14aa,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #000000,
+        400 : #ffffff,
+        500 : #ffffff,
+        600 : #ffffff,
+        700 : #ffffff,
+        800 : #ffffff,
+        900 : #ffffff,
+        A100 : #000000,
+        A200 : #000000,
+        A400 : #ffffff,
+        A700 : #ffffff,
+    )
+);
+
+$mat-mauvelight: (
+    50 : #b7e4c0,
+    100 : #9ad9a7,
+    200 : #7ece8e,
+    300 : #6fc981,
+    400 : #53be68,
+    500 : #40AA55,
+    600 : #45b85c,
+    700 : #40aa55,
+    800 : #3b9c4e,
+    900 : #358d47,
+    A100 : #ffffff,
+    A200 : #ffffff,
+    A400 : #fff1ff,
+    A700 : #ffd8ff,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #000000,
+        400 : #ffffff,
+        500 : #ffffff,
+        600 : #ffffff,
+        700 : #ffffff,
+        800 : #ffffff,
+        900 : #ffffff,
+        A100 : #000000,
+        A200 : #000000,
+        A400 : #ffffff,
+        A700 : #ffffff,
+    )
+);
+
+$orange-primary: mat-palette($mat-mauve);
+$orange-accent: mat-palette($mat-mauvelight);
+$orange-warn: mat-palette($mat-red);
+$orange-theme: mat-light-theme($orange-primary, $orange-accent, $orange-warn);
+
+.orange {
+  @include angular-material-theme($orange-theme);
+  @include toolbar-theme($orange-theme);
+  @include app-bg-theme($orange-theme);
+}
+
+$spaceamounts: (0, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 75, 100); // Adjust this to include the pixel amounts you need.
+$sides: (top, bottom, left, right); // Leave this variable alone
+@each $space in $spaceamounts {
+    @each $side in $sides {
+        .m#{str-slice($side, 0, 1)}-#{$space} {
+            margin-#{$side}: #{$space}px !important;
+        }
+        .p#{str-slice($side, 0, 1)}-#{$space} {
+            padding-#{$side}: #{$space}px !important;
+        }
+    }
+}
+
+@each $space in $spaceamounts {
+    .m-#{$space} {
+        margin: #{$space}px !important;
+    }
+    .p-#{$space} {
+        padding: #{$space}px !important;
+    }
+}
+
+
+//Working
+
+// $candy-app-primary: mat-palette($mat-red);
+// $candy-app-accent:  mat-palette($mat-pink, A200, A100, A400);
+
+// // The warn palette is optional (defaults to red).
+// $candy-app-warn:    mat-palette($mat-red);
+
+// // Create the theme object (a Sass map containing all of the palettes).
+// $candy-app-theme: mat-light-theme($candy-app-primary, $candy-app-accent, $candy-app-warn);
+
+// @include angular-material-theme($candy-app-theme);

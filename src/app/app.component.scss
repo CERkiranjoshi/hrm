@@ -1,0 +1,13 @@
+.wrap {
+    min-height: calc(100vh - 100px);
+    overflow-x: hidden;
+    overflow-y: auto;
+    background: #fff;
+}
+
+header {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+}

@@ -1,0 +1,137 @@
+{
+  "data": [
+    {
+      "id":1,
+      "name": "Kiran",
+      "email": "kj@ymail.com",
+      "phone": "3742983729",
+      "status": "active",
+      "department": "IT",
+      "manager": "Rohit",
+      "leaves": "12/24",
+      "joined": "12 JUN 2019"
+    },
+    {
+      "id":2,
+      "name": "Prateek",
+      "email": "pk@ymail.com",
+      "phone": "7879540437",
+      "status": "inactive",
+      "department": "IT",
+      "manager": "Rohit",
+      "leaves": "10/24",
+      "joined": "12 JUN 2019"
+    },
+    {
+      "id":3,
+      "name": "Anil",
+      "email": "anil@ymail.com",
+      "phone": "7879540437",
+      "status": "inactive",
+      "department": "Sales",
+      "manager": "Rohit",
+      "leaves": "10/24",
+      "joined": "12 JUN 2019"
+    },
+    {
+      "id":4,
+      "name": "Jay",
+      "email": "jay@ymail.com",
+      "phone": "7879540437",
+      "status": "inactive",
+      "department": "HR",
+      "manager": "Krishna",
+      "leaves": "10/24",
+      "joined": "12 JUN 2016"
+    },
+    {
+      "id":5,
+      "name": "Vimal",
+      "email": "vp@gmail.com",
+      "phone": "3742983729",
+      "status": "active",
+      "department": "IT",
+      "manager": "Rohit",
+      "leaves": "12/24",
+      "joined": "12 JUN 2019"
+    },
+    {
+      "id":6,
+      "name": "Aniket",
+      "email": "ans@gmail.com",
+      "phone": "7879500437",
+      "status": "inactive",
+      "department": "IT",
+      "manager": "Rohit",
+      "leaves": "10/24",
+      "joined": "12 JUN 2019"
+    },
+    {
+      "id":7,
+      "name": "Rutvik",
+      "email": "rutu@ymail.com",
+      "phone": "7879540437",
+      "status": "inactive",
+      "department": "Sales",
+      "manager": "Rohit",
+      "leaves": "10/24",
+      "joined": "12 JUN 2019"
+    },
+    {
+      "id":8,
+      "name": "Gaurav",
+      "email": "gp@ymail.com",
+      "phone": "7879540437",
+      "status": "active",
+      "department": "HR",
+      "manager": "Krishna",
+      "leaves": "10/24",
+      "joined": "12 JUN 2016"
+    },
+    {
+      "id":9,
+      "name": "Hardik",
+      "email": "hk@gmail.com",
+      "phone": "3742983729",
+      "status": "active",
+      "department": "IT",
+      "manager": "Rohit",
+      "leaves": "12/24",
+      "joined": "12 JUN 2019"
+    },
+    {
+      "id":10,
+      "name": "Animesh",
+      "email": "an@gmail.com",
+      "phone": "7879500437",
+      "status": "inactive",
+      "department": "IT",
+      "manager": "Rohit",
+      "leaves": "10/24",
+      "joined": "12 JUN 2019"
+    },
+    {
+      "id":11,
+      "name": "Tarun",
+      "email": "tarun@ymail.com",
+      "phone": "7879540437",
+      "status": "inactive",
+      "department": "Sales",
+      "manager": "Rohit",
+      "leaves": "10/24",
+      "joined": "12 JUN 2019"
+    },
+    {
+      "id":12,
+      "name": "jayesh",
+      "email": "jj@ymail.com",
+      "phone": "7879540437",
+      "status": "active",
+      "department": "HR",
+      "manager": "Krishna",
+      "leaves": "10/24",
+      "joined": "12 JUN 2016"
+    }
+
+  ]
+}

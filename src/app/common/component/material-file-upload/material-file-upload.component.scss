@@ -1,0 +1,30 @@
+@import '../../../../css/variable.scss';
+
+.cancel,
+.retry {
+  cursor: pointer !important;
+}
+
+.upload-button {
+  height: 24px;
+  border-radius: 2px;
+  color: $theme-secondary;
+  padding: 10px 15px;
+  cursor: pointer;
+  border: solid 1px $theme-secondary;
+}
+
+.error-display {
+  display: inline-block;
+  color: $error;
+}
+
+.success-display {
+  display: inline-block;
+  color: $success;
+}
+
+.upload-section{
+  border:  1px solid $bottom-underline-border;
+  border-radius: 4px;
+}

@@ -1,10 +1,20 @@
+import { HomeComponent } from './pages/home/home.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { LoginComponent } from './auth/login/login.component';
+import { PageNotFoundComponent } from './common/component/page-not-found/page-not-found.component';
+import { AuthGuard } from './auth/auth.guard';
 
-const routes: Routes = [];
+const routes: Routes = [
+  { path: 'login', component: LoginComponent, data: { animation: 'login' } },
+  { path: 'home', component: HomeComponent,canActivate: [AuthGuard]},
+  { path: '', redirectTo: '/login', pathMatch: 'full' },
+  { path: '**', component: PageNotFoundComponent, canActivate: [AuthGuard] }
+];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  imports: [RouterModule.forRoot(routes, { useHash: true })],
+  exports: [RouterModule],
+  providers: [AuthGuard]
 })
 export class AppRoutingModule { }
