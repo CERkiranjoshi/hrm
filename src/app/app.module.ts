@@ -99,7 +99,7 @@ const MY_FORMATS = {
       HttpClientApp
     ],
     multi: true
-    },
+    }
     , { provide: MAT_RIPPLE_GLOBAL_OPTIONS, useValue: globalRippleConfig }, AuthService, NotificationService, EncrDecrService, CommonService, LoadingFullScreenService,
     { provide: HTTP_INTERCEPTORS, useClass: FileUploadHttpInterceptor, multi: true },
     MAT_DATE_LOCALE_PROVIDER,
