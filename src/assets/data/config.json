@@ -11,7 +11,7 @@
   "pages": [
     {
       "url": "dashboard",
-      "name": "Dashboard",
+      "name": "Home",
       "active": true
     },
     {
