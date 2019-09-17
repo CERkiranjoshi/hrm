@@ -60,7 +60,7 @@ export class LoginComponent implements OnInit {
     const username = this.loginForm.value.username;
     const password = this.loginForm.value.password;
     if(username=='admin' && password=='password'){
-      this.router.navigate(['/home']);
+      this.router.navigate(['/dashboard']);
     }else{
       this.loadingFullScreenService.stopLoading();
       this.notificationService.handleNotification('Username & password is incorrect');

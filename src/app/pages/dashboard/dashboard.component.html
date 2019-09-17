@@ -1,0 +1,27 @@
+<section class="container mt-20">
+  <section fxLayout="row" fxLayoutGap="20px">
+    <section fxFlex="50" class="border-right-0">
+        <mat-list>
+            <h3 mat-subheader class="text-bold">Latest News</h3>
+            <mat-list-item *ngFor="let message of messages">
+              <img matListAvatar src="{{message.src}}" alt="...">
+              <h3 matLine> {{message.name}} </h3>
+              <p matLine title="{{message.content}}">
+                <span> {{message.subject}} </span>
+                <span class="demo-2"> -- {{message.content}} </span>
+              </p>
+            </mat-list-item>
+          </mat-list>
+    </section>
+    <section fxFlex="50">
+      <mat-list>
+        <h3 mat-subheader class="text-bold">Policy Information</h3>
+        <mat-list-item *ngFor="let note of notes">
+          <mat-icon mat-list-icon color="primary">note</mat-icon>
+          <h4 mat-line>{{note.name}}</h4>
+          <p mat-line> {{note.updated | date}} </p>
+        </mat-list-item>
+      </mat-list>
+    </section>
+  </section>
+</section>

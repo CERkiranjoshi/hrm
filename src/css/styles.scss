@@ -354,7 +354,7 @@ tr.mat-row,mat-footer-row,mat-row {
 }
 
 .text-bold{
-  font-weight: bold;
+  font-weight: bold !important;
 }
 .text-center{
   text-align: center;
@@ -397,6 +397,12 @@ tr.mat-row,mat-footer-row,mat-row {
 }
 .border-bottom-0{
   border-bottom: 1px solid $bottom-underline-border;
+}
+.border-right-0{
+  border-right: 1px solid $bottom-underline-border;
+}
+.border-left-0{
+  border-left: 1px solid $bottom-underline-border;
 }
 
 // .mat-fab .mat-button-wrapper{

@@ -10,9 +10,14 @@
   },
   "pages": [
     {
-      "url": "home",
-      "name": "Homepage",
-      "active": false,
+      "url": "dashboard",
+      "name": "Dashboard",
+      "active": true
+    },
+    {
+      "url": "employees",
+      "name": "Employees",
+      "active": true,
       "departmentFilterLists": [
         {
           "key": "",

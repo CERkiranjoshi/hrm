@@ -37,6 +37,7 @@ import { GeneralPopupComponent } from './common/component/general-popup/general-
 import { CommonModule } from '@angular/common';
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 import { HomeComponent } from './pages/home/home.component';
+import { DashboardComponent } from './pages/dashboard/dashboard.component';
 
 
 const globalRippleConfig: RippleGlobalOptions = {
@@ -72,6 +73,7 @@ const MY_FORMATS = {
     DocumentFullscreenViewerComponent,
     GeneralPopupComponent,
     HomeComponent,
+    DashboardComponent,
   ],
   imports: [
     BrowserModule,

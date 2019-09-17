@@ -1,3 +1,4 @@
+import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { HomeComponent } from './pages/home/home.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
@@ -7,7 +8,8 @@ import { AuthGuard } from './auth/auth.guard';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent, data: { animation: 'login' } },
-  { path: 'home', component: HomeComponent,canActivate: [AuthGuard]},
+  { path: 'employees', component: HomeComponent,canActivate: [AuthGuard]},
+  { path: 'dashboard', component: DashboardComponent,canActivate: [AuthGuard]},
   { path: '', redirectTo: '/login', pathMatch: 'full' },
   { path: '**', component: PageNotFoundComponent, canActivate: [AuthGuard] }
 ];
