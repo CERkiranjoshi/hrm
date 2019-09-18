@@ -1,49 +1,44 @@
-<mat-toolbar color="primary" class="container" fxLayout="row">
-  <!-- <div fxHide.gt-xs>
-    <button mat-icon-button (click)="onToggleSidenav()">
+<mat-toolbar color="primary" class="container">
+  <section class="logo-container" fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="start center">
+    <button mat-flat-button color="primary" (click)="onToggleSidenav()">
       <mat-icon>menu</mat-icon>
     </button>
-  </div> -->
-  <div>
-    <section  class="logo-container">
-      <button mat-flat-button color="primary" >
-        <mat-icon>view_headline</mat-icon>
-        </button>
-    </section>
-  </div>
-  <div class="stroke" fxFlex="100" fxLayout fxLayoutAlign="none" fxHide.xs>
-    <ul *ngIf="authService.isAuth()" fxLayoutGap="20px" fxFlex="80" fxLayoutAlign="start center" class="navigation-items ml-20">
+    <span class="text-bold">HRM</span>
+  </section>
+
+  <!-- <ul *ngIf="authService.isAuth()" fxLayoutGap="20px" fxFlex="80" fxLayoutAlign="start center"
+      class="navigation-items ml-20">
       <li *ngFor="let page of organisationData.pages" [ngClass]="{'hide': page.active==false}">
         <a routerLinkActive="active" routerLink="/{{page.url}}">{{page.name}}</a>
       </li>
-    </ul>
-    <ul fxLayoutGap="20px" fxFlex="20" fxLayoutAlign="end center" class="navigation-items">
-      <li *ngIf="authService.isAuth()" fxFlex class="user-icon">
-        <mat-icon>account_circle</mat-icon>
-      </li>
-      <li *ngIf="authService.isAuth()" class="user-display-container" fxFlex fxLayout="column">
-        <span class="user-display">
-          <b>Welcome, {{getUserData('name')}}</b>
-        </span>
-        <!-- <span class="user-display">
+    </ul> -->
+  <ul fxLayoutGap="20px" fxLayout="row" fxFlex="20" fxLayoutAlign="end center" class="navigation-items">
+    <li *ngIf="authService.isAuth()" fxFlex class="user-icon">
+      <mat-icon>account_circle</mat-icon>
+    </li>
+    <li *ngIf="authService.isAuth()" class="user-display-container" fxFlex fxLayout="column">
+      <span class="user-display">
+        <b>Welcome, {{getUserData('name')}}</b>
+      </span>
+      <!-- <span class="user-display">
           Last login : {{getUserData('last_login') * 1000 | date : 'mediumDate'}}
         </span> -->
-      </li>
-      <li *ngIf="authService.isAuth()" fxFlex>
-        <button mat-icon-button [matMenuTriggerFor]="menu">
-          <mat-icon>more_vert</mat-icon>
+    </li>
+    <li *ngIf="authService.isAuth()" fxFlex>
+      <button mat-icon-button [matMenuTriggerFor]="menu">
+        <mat-icon>more_vert</mat-icon>
+      </button>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item (click)="changePassword()">
+          <mat-icon>settings</mat-icon>
+          <span>Change password</span>
         </button>
-        <mat-menu #menu="matMenu">
-          <button mat-menu-item (click)="changePassword()">
-            <mat-icon>settings</mat-icon>
-            <span>Change password</span>
-          </button>
-          <button mat-menu-item (click)="signOut()">
-            <mat-icon>power_settings_new</mat-icon>
-            <span>Logout</span>
-          </button>
-        </mat-menu>
-      </li>
-    </ul>
-  </div>
+        <button mat-menu-item (click)="signOut()">
+          <mat-icon>power_settings_new</mat-icon>
+          <span>Logout</span>
+        </button>
+      </mat-menu>
+    </li>
+  </ul>
+  <!-- </section> -->
 </mat-toolbar>

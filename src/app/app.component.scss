@@ -1,5 +1,5 @@
 .wrap {
-    min-height: calc(100vh - 100px);
+    min-height: calc(100vh - 50px);
     overflow-x: hidden;
     overflow-y: auto;
     background: #fff;
@@ -10,4 +10,8 @@ header {
     top: 0;
     width: 100%;
     z-index: 1;
+}
+
+.mat-drawer-container{
+    height: calc(100vh - 50px); 
 }

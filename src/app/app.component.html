@@ -1,24 +1,20 @@
 <section class="{{theme}}">
-
   <app-loading-screen></app-loading-screen>
   <header id="header-main">
-    <app-header></app-header>
+    <app-header (sidenavToggle)="sidenav.toggle()"></app-header>
   </header>
   <main class="wrap">
-    <!-- <mat-sidenav-container>
-      <mat-sidenav #sidenav role="navigation">
-    <app-sidenav-list (closeSidenav)="sidenav.close()"></app-sidenav-list>
-  </mat-sidenav>
+    <mat-sidenav-container [style.marginTop.px]="mobileQuery.matches ? 56 : 0">
+      <mat-sidenav #sidenav [mode]="mobileQuery.matches ? 'over' : 'over'" [fixedInViewport]="mobileQuery.matches"
+        fixedTopGap="56" role="navigation">
+        <app-sidenav-list (closeSidenav)="sidenav.close()"></app-sidenav-list>
+      </mat-sidenav>
       <mat-sidenav-content>
-        <app-header (sidenavToggle)="sidenav.toggle()"></app-header>
-        <router-outlet></router-outlet>
+        <section [@routeAnimations]="getAnimationData(routerOutlet)">
+          <router-outlet #routerOutlet="outlet"></router-outlet>
+        </section>
       </mat-sidenav-content>
-    </mat-sidenav-container> -->
-    <!-- <app-header (sidenavToggle)="sidenav.toggle()"></app-header> -->
-    <div [@routeAnimations]="getAnimationData(routerOutlet)">
-      <router-outlet #routerOutlet="outlet"></router-outlet>
-    </div>
-
+    </mat-sidenav-container>
   </main>
   <!-- <footer>
     <app-footer></app-footer>

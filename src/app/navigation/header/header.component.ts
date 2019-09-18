@@ -1,7 +1,7 @@
 import { CommonService } from './../../common/service/common.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import { AuthService } from './../../auth/auth.service';
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation, Output, EventEmitter } from '@angular/core';
 import { UserIdleService } from 'angular-user-idle';
 import { NotificationService } from 'src/app/common/service/notification.service';
 
@@ -16,6 +16,9 @@ export class HeaderComponent implements OnInit {
   organisationData = {}
   user: any;
   url = ''
+
+  @Output() sidenavToggle = new EventEmitter();
+
 
   constructor(private route: ActivatedRoute, public authService: AuthService, public commonService: CommonService, public notificationService: NotificationService) {
     this.organisationData = this.commonService.getOrganisationData()
@@ -48,6 +51,9 @@ export class HeaderComponent implements OnInit {
     return 'Admin'
   }
 
+  onToggleSidenav(){
+    this.sidenavToggle.emit();
+  }
 
   signOut() {
     this.authService.signOut();

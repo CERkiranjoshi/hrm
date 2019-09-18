@@ -12,12 +12,14 @@
     {
       "url": "dashboard",
       "name": "Home",
+      "icon" : "home",
       "active": true
     },
     {
       "url": "employees",
       "name": "Employees",
       "active": true,
+      "icon" : "supervisor_account",
       "departmentFilterLists": [
         {
           "key": "",
@@ -118,6 +120,12 @@
           "searchByVal": ""
         }
       ]
+    },
+    {
+      "url": "login",
+      "name": "Login",
+      "icon" : "input",
+      "active": true
     }
   ]
 }
