@@ -44,11 +44,10 @@ export class HeaderComponent implements OnInit {
   }
 
   getUserData(key: string) {
-    // let user = this.authService.getUser();
-    // if (user != null && user[key] != undefined) {
-    //   return user[key]
-    // }
-    return 'Admin'
+    let user = this.authService.getUser();
+    if (user != null && user[key] != undefined) {
+      return user[key]
+    }
   }
 
   onToggleSidenav(){

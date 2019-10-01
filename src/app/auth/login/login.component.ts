@@ -55,13 +55,35 @@ export class LoginComponent implements OnInit {
     return this.loginForm.get('password');
   }
 
+  setUser(userType) {
+    let temp = {}
+    if (userType == 'admin') {
+      temp = {
+        'name': "Admin",
+        "type": "admin"
+      }
+    } else {
+      temp = {
+        'name': "Employee",
+        "type": "employee"
+      }
+    }
+
+    let tp = JSON.stringify(temp);
+    sessionStorage.setItem('user', tp);
+  }
+
   signinUser() {
     this.loadingFullScreenService.startLoading();
     const username = this.loginForm.value.username;
     const password = this.loginForm.value.password;
-    if(username=='admin' && password=='password'){
+    if (username == 'admin' && password == 'password') {
+      this.setUser('admin')
       this.router.navigate(['/dashboard']);
-    }else{
+    }else if (username == 'employee' && password == 'password') {
+      this.setUser('employee')
+      this.router.navigate(['/dashboard']);
+    } else {
       this.loadingFullScreenService.stopLoading();
       this.notificationService.handleNotification('Username & password is incorrect');
     }

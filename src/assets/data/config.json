@@ -13,12 +13,14 @@
       "url": "dashboard",
       "name": "Home",
       "icon" : "home",
-      "active": true
+      "active": true,
+      "restrictedUsersGroup" : []
     },
     {
       "url": "employees",
       "name": "Employees",
       "active": true,
+      "restrictedUsersGroup" : [],
       "icon" : "supervisor_account",
       "departmentFilterLists": [
         {
@@ -125,7 +127,7 @@
       "url": "login",
       "name": "Login",
       "icon" : "input",
-      "active": true
+      "active": false
     }
   ]
 }

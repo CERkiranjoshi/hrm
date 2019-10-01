@@ -1,6 +1,6 @@
 <mat-toolbar color="primary" class="container">
   <section class="logo-container" fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="start center">
-    <button mat-flat-button color="primary" (click)="onToggleSidenav()">
+    <button *ngIf="authService.isAuth()" mat-flat-button color="primary" (click)="onToggleSidenav()">
       <mat-icon>menu</mat-icon>
     </button>
     <span class="text-bold">HRM</span>
@@ -29,7 +29,7 @@
           <mat-icon>more_vert</mat-icon>
         </button>
         <mat-menu #menu="matMenu">
-          <button mat-menu-item (click)="changePassword()">
+          <button mat-menu-item disabled (click)="changePassword()">
             <mat-icon>settings</mat-icon>
             <span>Change password</span>
           </button>

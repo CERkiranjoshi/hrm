@@ -16,13 +16,12 @@ export class AuthService {
   constructor(public notificationService: NotificationService, private router: Router, private userIdle: UserIdleService, public http: HttpClient, public httpclientapp: HttpClientApp) { }
 
   isAuth() {
-    // const authorization = this.getCookie('sessionid');
-    // if (authorization != null) {
-    //   return true;
-    // } else {
-    //   return false;
-    // }
-    return true;
+    let authorization = sessionStorage.getItem('user');
+    if (authorization != null) {
+      return true;
+    } else {
+      return false;
+    }
   }
 
   getCookie(cname) {
@@ -48,7 +47,7 @@ export class AuthService {
   getUser() {
     let data = sessionStorage.getItem('user');
     let obj = JSON.parse(data);
-    if (data != null && obj.id != undefined) {
+    if (data != null) {
       this.user = obj;
       return this.user;
     }
