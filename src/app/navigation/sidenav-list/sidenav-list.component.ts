@@ -18,6 +18,7 @@ export class SidenavListComponent implements OnInit {
   constructor(private route: ActivatedRoute, public authService: AuthService, public commonService: CommonService, public notificationService: NotificationService) {
     this.userType = this.authService.getUserType()
     this.organisationData = this.commonService.getOrganisationData()
+    console.log('inn')
   }
 
 
@@ -26,6 +27,7 @@ export class SidenavListComponent implements OnInit {
   }
 
   onToggleSidenav(){
+    this.userType = this.authService.getUserType()
     this.closeSidenav.emit();
   }
 
