@@ -11,16 +11,18 @@ import { NotificationService } from 'src/app/common/service/notification.service
 })
 export class SidenavListComponent implements OnInit {
   organisationData:any
-  isAuth = false;
   @Output() closeSidenav = new EventEmitter();
+  userType = ''
 
 
   constructor(private route: ActivatedRoute, public authService: AuthService, public commonService: CommonService, public notificationService: NotificationService) {
+    this.userType = this.authService.getUserType()
     this.organisationData = this.commonService.getOrganisationData()
   }
 
 
   ngOnInit() {
+   
   }
 
   onToggleSidenav(){

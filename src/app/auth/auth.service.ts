@@ -53,6 +53,16 @@ export class AuthService {
     }
   }
 
+  getUserType(){
+    let data = sessionStorage.getItem('user');
+    let obj = JSON.parse(data);
+    if (data != null) {
+      return obj.type;
+    }else{
+      return false;
+    }
+  }
+
   getUserDetails() {
     return this.httpclientapp.get('api/me/').pipe(
       map((res) => {

@@ -12,16 +12,57 @@
     {
       "url": "dashboard",
       "name": "Home",
-      "icon" : "home",
+      "icon": "home",
       "active": true,
-      "restrictedUsersGroup" : []
+      "restrictedUsersGroup": [
+        "admin"
+      ]
+    },
+    {
+      "url": "news",
+      "name": "Latest News",
+      "icon": "notes",
+      "active": true,
+      "restrictedUsersGroup": [
+        "employee"
+      ]
+    },
+    {
+      "url": "profile",
+      "name": "Profile",
+      "icon": "person_pin",
+      "active": true,
+      "restrictedUsersGroup": [
+        "employee"
+      ]
+    },
+    {
+      "url": "finances",
+      "name": "Finances",
+      "icon": "attach_money",
+      "active": true,
+      "restrictedUsersGroup": [
+        "employee"
+      ]
+    },
+    {
+      "url": "policies",
+      "name": "Company Policies ",
+      "icon": "policy",
+      "active": true,
+      "restrictedUsersGroup": [
+        "employee"
+      ]
     },
     {
       "url": "employees",
-      "name": "Employees",
+      "name": "Employees Directory",
       "active": true,
-      "restrictedUsersGroup" : [],
-      "icon" : "supervisor_account",
+      "restrictedUsersGroup": [
+        "admin",
+        "employee"
+      ],
+      "icon": "supervisor_account",
       "departmentFilterLists": [
         {
           "key": "",
@@ -124,10 +165,56 @@
       ]
     },
     {
+      "url": "addemployee",
+      "name": "Add Employees",
+      "active": true,
+      "restrictedUsersGroup": [
+        "admin"
+      ],
+      "icon": "person_add"
+    },
+    {
+      "url": "addnews",
+      "name": "News Update",
+      "active": true,
+      "restrictedUsersGroup": [
+        "admin"
+      ],
+      "icon": "forum"
+    },
+    {
+      "url": "calendar",
+      "name": "Calendar",
+      "active": true,
+      "restrictedUsersGroup": [
+        "admin"
+      ],
+      "icon": "calendar_today"
+    },
+    {
+      "url": "attendance",
+      "name": "Attendance",
+      "active": true,
+      "restrictedUsersGroup": [
+        "employee"
+      ],
+      "icon": "pan_tool"
+    },
+    {
+      "url": "holiday",
+      "name": "Holiday List",
+      "active": true,
+      "restrictedUsersGroup": [
+        "employee"
+      ],
+      "icon": "motorcycle"
+    },
+    {
       "url": "login",
       "name": "Login",
-      "icon" : "input",
-      "active": false
+      "icon": "input",
+      "active": false,
+      "restrictedUsersGroup": []
     }
   ]
 }

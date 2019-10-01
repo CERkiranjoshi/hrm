@@ -20,14 +20,14 @@ a {
     color: #ffffff;
 }
 .user-display-container{
-    height: 50px;
-    justify-content: space-evenly;
+    // height: 50px;
+    // justify-content: space-evenly;
 }
 .user-icon{
     display: flex;
-    padding-right: 20px;
-    justify-content: flex-end;
-    border-right: 1px solid $bottom-underline-border;
+    // padding-right: 20px;
+    // justify-content: flex-end;
+    // border-right: 1px solid $bottom-underline-border;
 }
 
 // .stroke ul li:hover{
@@ -95,6 +95,10 @@ a.active {
 
 .mat-toolbar-single-row {
     height: 50px;
+}
+
+.toolbar-container{
+    width: 100%;
 }
 
 
