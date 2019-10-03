@@ -468,3 +468,8 @@ tr.mat-row,mat-footer-row,mat-row {
   padding: 2%;
   text-align: -webkit-center;
 }
+.mat-list-item.active {
+  
+    background: $theme-primary-rgba !important;
+  
+}
