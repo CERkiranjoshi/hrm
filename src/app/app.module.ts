@@ -38,6 +38,15 @@ import { CommonModule } from '@angular/common';
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 import { HomeComponent } from './pages/home/home.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
+import { NewsComponent } from './pages/news/news.component';
+import { ProfileComponent } from './pages/profile/profile.component';
+import { FinancesComponent } from './pages/finances/finances.component';
+import { PoliciesComponent } from './pages/policies/policies.component';
+import { AttendanceComponent } from './pages/attendance/attendance.component';
+import { HolidayComponent } from './pages/holiday/holiday.component';
+import { EmployeeCreateComponent } from './pages/employee-create/employee-create.component';
+import { NewsCreateComponent } from './pages/news-create/news-create.component';
+import { CalendarComponent } from './pages/calendar/calendar.component';
 
 
 const globalRippleConfig: RippleGlobalOptions = {
@@ -74,6 +83,15 @@ const MY_FORMATS = {
     GeneralPopupComponent,
     HomeComponent,
     DashboardComponent,
+    NewsComponent,
+    ProfileComponent,
+    FinancesComponent,
+    PoliciesComponent,
+    AttendanceComponent,
+    HolidayComponent,
+    EmployeeCreateComponent,
+    NewsCreateComponent,
+    CalendarComponent,
   ],
   imports: [
     BrowserModule,

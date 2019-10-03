@@ -1,3 +1,4 @@
+import { AuthService } from './../../auth/auth.service';
 import { Component, EventEmitter, OnInit, Output, ViewChild, ElementRef } from '@angular/core';
 import { PageEvent, MatSelectChange, MatTableDataSource, MatPaginator } from '@angular/material';
 import { SelectionModel } from '@angular/cdk/collections';
@@ -56,7 +57,7 @@ export class HomeComponent implements OnInit {
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild('input') input: ElementRef;
 
-  constructor(public router: Router, private route: ActivatedRoute, public commonService: CommonService, public notificationService: NotificationService, public apiService: ApiService, public loadingFullScreenService: LoadingFullScreenService) {
+  constructor(public authService : AuthService,public router: Router, private route: ActivatedRoute, public commonService: CommonService, public notificationService: NotificationService, public apiService: ApiService, public loadingFullScreenService: LoadingFullScreenService) {
     this.pageConfigData = this.commonService.getPageConfig(this.route.snapshot.routeConfig.path);
     this.organisationData = this.commonService.getOrganisationData();
     this.route.queryParams.subscribe(params => {
@@ -80,6 +81,10 @@ export class HomeComponent implements OnInit {
 
   ngAfterViewInit() {
     this.getEmployeeDetails();
+  }
+
+  addEmployee(){
+    this.router.navigate(['/addemployee']); 
   }
 
   initFilterList(filterList) {

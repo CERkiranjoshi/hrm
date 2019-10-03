@@ -27,7 +27,7 @@
     </section>
     <section fxFlex="30">
       <section fxLayout="row" fxLayoutGap="20px" fxLayoutAlign="flex-end baseline">
-        <button type="button" title="Add  New Employee" mat-raised-button color="accent"
+        <button *ngIf="authService.getUserType()=='admin'" (click)="addEmployee()" type="button" title="Add  New Employee" mat-raised-button color="accent"
          >
           <mat-icon>person_add</mat-icon>
           <span class="ml-5">Add New Employee</span>

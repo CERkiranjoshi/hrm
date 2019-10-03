@@ -78,11 +78,18 @@ export class LoginComponent implements OnInit {
     const username = this.loginForm.value.username;
     const password = this.loginForm.value.password;
     if (username == 'admin' && password == 'password') {
-      this.setUser('admin')
-      this.router.navigate(['/dashboard']);
-    }else if (username == 'employee' && password == 'password') {
-      this.setUser('employee')
-      this.router.navigate(['/dashboard']);
+      setTimeout(() => {
+        this.loadingFullScreenService.stopLoading();
+        this.setUser('admin')
+        this.router.navigate(['/dashboard']);
+      }, 1000)
+    } else if (username == 'employee' && password == 'password') {
+      setTimeout(() => {
+        this.loadingFullScreenService.stopLoading();
+        this.setUser('employee')
+        this.router.navigate(['/dashboard']);
+      }, 1000)
+
     } else {
       this.loadingFullScreenService.stopLoading();
       this.notificationService.handleNotification('Username & password is incorrect');
