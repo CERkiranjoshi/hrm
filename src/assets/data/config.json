@@ -51,7 +51,8 @@
       "icon": "policy",
       "active": true,
       "restrictedUsersGroup": [
-        "employee"
+        "employee",
+        "admin"
       ]
     },
     {
@@ -167,7 +168,7 @@
     {
       "url": "addemployee",
       "name": "Add Employees",
-      "active": true,
+      "active": false,
       "restrictedUsersGroup": [
         "admin"
       ],

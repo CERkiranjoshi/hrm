@@ -1,3 +1,117 @@
-<section class="container">
-  <app-title title="ADD NEW EMPLOYEE"></app-title>
+<section class="container" [@InOut]="'in'">
+  <section>
+    <app-title callBack="true" showBackButton="true" (callBackFunc)='backToEmployeelist($event)' title="ADD NEW EMPLOYEE"></app-title>
+  </section>
+  <section>
+    <section class="customer-declartion policy-details" fxLayout="row">
+      <mat-card fxFlex="100">
+        <!-- <mat-card-header class="mr-0">
+          <mat-card-title>EMPLOYEE DETAILS</mat-card-title>
+        </mat-card-header> -->
+        <mat-card-content>
+          <img src="../../../assets/img/document-text-accept.svg" class="customer-declartion-img-background">
+          <form class="policy-details-form" fxLayout="column" fxLayoutAlign="center" fxLayoutGap="10px"
+            [formGroup]="policyDetails">
+            <section fxLayout="row" fxLayoutGap="20px">
+              <mat-form-field fxFlex="50">
+                <input type="text" matInput placeholder="Employee ID" formControlName="emp_id"
+                  [required]="policyDetails.get('policy_type').value == 'CORPORATE'" autocomplete="off">
+                <mat-error>Invalid or Missing employee ID.</mat-error>
+              </mat-form-field>
+              <mat-form-field fxFlex="50">
+                <mat-label>Reporting Manager</mat-label>
+                <mat-select formControlName="policy_type" required>
+                  <mat-option *ngFor="let item of dropdownValues.policy_type | keyvalue" [value]="item.key">
+                    {{item.value}}
+                  </mat-option>
+                </mat-select>
+                <mat-error>Please select reporting manager.</mat-error>
+              </mat-form-field>
+            </section>
+            <section fxLayout="row" fxLayoutGap="20px">
+              <mat-form-field fxFlex="50">
+                <input type="text" matInput placeholder="Employee name" formControlName="claimant_name" required
+                  autocomplete="off">
+                <mat-error>Invalid or Missing Employee name.</mat-error>
+              </mat-form-field>
+              <mat-form-field fxFlex="50">
+                <input type="email" matInput placeholder="Email address" formControlName="claimant_email" required
+                  autocomplete="off">
+                <mat-error>Invalid or Missing email address.</mat-error>
+              </mat-form-field>
+            </section>
+            <section fxLayout="row" fxLayoutGap="20px">
+              <mat-form-field fxFlex="50">
+                <input type="text" matInput maxlength="10" placeholder="Employee phone number"
+                  formControlName="claimant_phone" required autocomplete="off">
+                <mat-error>Invalid or Missing phone number.</mat-error>
+              </mat-form-field>
+              <mat-form-field fxFlex="50">
+                <input type="text" matInput placeholder="Employee age" maxlength="3" formControlName="claimant_age"
+                  required autocomplete="off">
+                <mat-error>Invalid or Missing age.</mat-error>
+              </mat-form-field>
+            </section>
+            <mat-form-field>
+              <input type="text" matInput placeholder="Employee address" formControlName="claimant_address" required
+                autocomplete="off">
+              <mat-error>Invalid or Missing Employee address.</mat-error>
+            </mat-form-field>
+            <section fxLayout="row" fxLayoutGap="20px">
+              <mat-form-field fxFlex="33.33">
+                <mat-label>Select state</mat-label>
+                <mat-select formControlName="claimant_state" required>
+                  <mat-option *ngFor="let item of dropdownValues.state | keyvalue" [value]="item.key">
+                    {{item.value}}
+                  </mat-option>
+                </mat-select>
+                <mat-error>Missing state.</mat-error>
+              </mat-form-field>
+              <mat-form-field fxFlex="33.33">
+                <input type="text" matInput placeholder="City" formControlName="claimant_city" required
+                  autocomplete="off">
+                <mat-error>Missing city.</mat-error>
+              </mat-form-field>
+              <mat-form-field fxFlex="33.33">
+                <input #postalCode maxlength="6" ype="text" matInput placeholder="Pincode"
+                  formControlName="claimant_pincode" required autocomplete="off">
+                <mat-error>Invalid or Missing pincode.</mat-error>
+                <mat-hint align="end">{{postalCode.value.length}} / 6</mat-hint>
+              </mat-form-field>
+            </section>
+            <section fxLayout="row" fxLayoutGap="20px">
+              <mat-form-field fxFlex="33.33">
+                <input matInput [max]="maxDate" [matDatepicker]="dpa" placeholder="Date of Joining"
+                  formControlName="claimant_doa" required autocomplete="off">
+                <mat-datepicker-toggle matSuffix [for]="dpa"></mat-datepicker-toggle>
+                <mat-datepicker #dpa></mat-datepicker>
+                <mat-hint><strong>Format must be:</strong> DD-MMM-YYYY </mat-hint>
+              </mat-form-field>
+              <mat-form-field fxFlex="33.33">
+                <input #lineOfTreatment type="text" matInput placeholder="About employee" maxlength="255"
+                  formControlName="claimant_lot" required autocomplete="off">
+                <mat-error>Invalid or Missing treatment info.</mat-error>
+                <mat-hint align="end">{{lineOfTreatment.value.length}} / 255</mat-hint>
+              </mat-form-field>
+              <section fxFlex="33.33" class="mt-25 mb-20">
+                <label>Gender * </label>
+                <mat-radio-group formControlName="claimant_gender" required>
+                  <mat-radio-button value="Male">Male</mat-radio-button>
+                  <mat-radio-button value="Female">Female</mat-radio-button>
+                  <mat-radio-button value="Other">Other</mat-radio-button>
+                </mat-radio-group>
+              </section>
+            </section>
+          </form>
+        </mat-card-content>
+      </mat-card>
+    </section>
+    <!-- [disabled]="policyDetails.invalid || claimantDetails.invalid" (click)="saveCustomerDetails()" -->
+    <section class="container" fxLayout="row" fxFlexFill fxLayoutAlign="center center" fxLayout.xs="column">
+      <button class="mt-10 mb-20" type="button" mat-raised-button color="primary"
+       >SAVE
+        EMPLOYEE DETAILS
+      </button>
+    </section>
+  </section>
 </section>
