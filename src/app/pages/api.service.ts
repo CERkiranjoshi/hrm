@@ -22,4 +22,14 @@ export class ApiService {
       }));
   }
 
+  getCompanyLists(query) {//?user_id=2&offset=0&limit=20&state=&sort_by=updated&sort_order=DESC&q=&allocated_to=
+    return this.httpclientapp.get('assets/data/company.json').pipe(
+      map((res) => {
+        return res;
+      }
+      )).pipe(catchError((error) => {
+        return this.httpclientapp.handleError(error);
+      }));
+  }
+
 }

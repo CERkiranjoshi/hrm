@@ -25,6 +25,71 @@
       "active": true,
       "restrictedUsersGroup": [
         "superuser"
+      ],
+      "displayColumns": [
+        {
+          "name": "Company Name",
+          "key": "name",
+          "display": "text",
+          "sort": false,
+          "search": true,
+          "searchBy": "text",
+          "searchByVal": ""
+        },
+        {
+          "name": "Address",
+          "key": "address",
+          "display": "text",
+          "sort": false,
+          "search": true,
+          "searchBy": "text",
+          "searchByVal": ""
+        },
+        {
+          "name": "Email",
+          "key": "email",
+          "display": "text",
+          "sort": false,
+          "search": true,
+          "searchBy": "text",
+          "searchByVal": ""
+        },
+        {
+          "name": "Phone",
+          "key": "phone",
+          "display": "text",
+          "sort": false,
+          "search": true,
+          "searchBy": "text",
+          "searchByVal": ""
+        },
+        {
+          "name": "Status",
+          "key": "status",
+          "display": "text",
+          "sort": false,
+          "search": true,
+          "searchBy": "text",
+          "searchByVal": ""
+        },
+        {
+          "name": "Admin Created",
+          "key": "admin_created",
+          "display": "text",
+          "sort": false,
+          "search": false,
+          "searchBy": "text",
+          "searchByVal": ""
+        },
+        {
+          "name": "Created Date",
+          "key": "created",
+          "display": "text",
+          "sort": true,
+          "search": false,
+          "searchBy": "text",
+          "searchByVal": ""
+        }
       ]
     },
     {

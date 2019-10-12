@@ -1,0 +1,149 @@
+{
+  "data": [
+    {
+      "id":1,
+      "name": "ABC Pvt Ltd",
+      "address" : "Mumbai , Andheri",
+      "email": "kj@ymail.com",
+      "phone": "3742983729",
+      "status": "active",
+      "department": "IT",
+      "admin_created": "true",
+      "leaves": "12/24",
+      "created": "12 JUN 2019"
+    },
+    {
+      "id":2,
+      "name": "ABC Pvt Ltd",
+      "address" : "Mumbai , Andheri",
+      "email": "pk@ymail.com",
+      "phone": "7879540437",
+      "status": "inactive",
+      "department": "IT",
+      "admin_created": "true",
+      "leaves": "10/24",
+      "created": "12 JUN 2019"
+    },
+    {
+      "id":3,
+      "name": "ABC Pvt Ltd",
+      "address" : "Mumbai , Andheri",
+      "email": "anil@ymail.com",
+      "phone": "7879540437",
+      "status": "inactive",
+      "department": "Sales",
+      "admin_created": "false",
+      "leaves": "10/24",
+      "created": "12 JUN 2019"
+    },
+    {
+      "id":4,
+      "name": "ABC Pvt Ltd",
+      "address" : "Mumbai , Andheri",
+      "email": "jay@ymail.com",
+      "phone": "7879540437",
+      "status": "inactive",
+      "department": "HR",
+      "admin_created": "false",
+      "leaves": "10/24",
+      "created": "12 JUN 2016"
+    },
+    {
+      "id":5,
+      "name": "ABC Pvt Ltd",
+      "address" : "Mumbai , Andheri",
+      "email": "vp@gmail.com",
+      "phone": "3742983729",
+      "status": "active",
+      "department": "IT",
+      "admin_created": "false",
+      "leaves": "12/24",
+      "created": "12 JUN 2019"
+    },
+    {
+      "id":6,
+      "name": "ABC Pvt Ltd",
+      "address" : "Mumbai , Andheri",
+      "email": "ans@gmail.com",
+      "phone": "7879500437",
+      "status": "inactive",
+      "department": "IT",
+      "admin_created": "false",
+      "leaves": "10/24",
+      "created": "12 JUN 2019"
+    },
+    {
+      "id":7,
+      "name": "ABC Pvt Ltd",
+      "address" : "Mumbai , Andheri",
+      "email": "rutu@ymail.com",
+      "phone": "7879540437",
+      "status": "inactive",
+      "department": "Sales",
+      "admin_created": "false",
+      "leaves": "10/24",
+      "created": "12 JUN 2019"
+    },
+    {
+      "id":8,
+      "name": "ABC Pvt Ltd",
+      "address" : "Mumbai , Andheri",
+      "email": "gp@ymail.com",
+      "phone": "7879540437",
+      "status": "active",
+      "department": "HR",
+      "admin_created": "false",
+      "leaves": "10/24",
+      "created": "12 JUN 2016"
+    },
+    {
+      "id":9,
+      "name": "ABC Pvt Ltd",
+      "address" : "Mumbai , Andheri",
+      "email": "hk@gmail.com",
+      "phone": "3742983729",
+      "status": "active",
+      "department": "IT",
+      "admin_created": "false",
+      "leaves": "12/24",
+      "created": "12 JUN 2019"
+    },
+    {
+      "id":10,
+      "name": "ABC Pvt Ltd",
+      "address" : "Mumbai , Andheri",
+      "email": "an@gmail.com",
+      "phone": "7879500437",
+      "status": "inactive",
+      "department": "IT",
+      "admin_created": "false",
+      "leaves": "10/24",
+      "created": "12 JUN 2019"
+    },
+    {
+      "id":11,
+      "name": "ABC Pvt Ltd",
+      "address" : "Mumbai , Andheri",
+      "email": "tarun@ymail.com",
+      "phone": "7879540437",
+      "status": "inactive",
+      "department": "Sales",
+      "admin_created": "false",
+      "leaves": "10/24",
+      "created": "12 JUN 2019"
+    },
+    {
+      "id":12,
+      "name": "ABC Pvt Ltd",
+      "address" : "Mumbai , Andheri",
+      "email": "jj@ymail.com",
+      "phone": "7879540437",
+      "status": "active",
+      "department": "HR",
+      "admin_created": "false",
+      "leaves": "10/24",
+      "created": "12 JUN 2016"
+    }
+
+  ]
+}
