@@ -19,6 +19,42 @@
       ]
     },
     {
+      "url": "companylists",
+      "name": "Company Lists",
+      "icon": "list",
+      "active": true,
+      "restrictedUsersGroup": [
+        "superuser"
+      ]
+    },
+    {
+      "url": "addcompany",
+      "name": "Company Create",
+      "icon": "home",
+      "active": false,
+      "restrictedUsersGroup": [
+        "superuser"
+      ]
+    },
+    {
+      "url": "userslists",
+      "name": "Users Lists",
+      "icon": "supervised_user_circle",
+      "active": true,
+      "restrictedUsersGroup": [
+        "superuser"
+      ]
+    },
+    {
+      "url": "adduser",
+      "name": "Create User",
+      "icon": "supervisor_account",
+      "active": false,
+      "restrictedUsersGroup": [
+        "superuser"
+      ]
+    },
+    {
       "url": "news",
       "name": "Latest News",
       "icon": "notes",

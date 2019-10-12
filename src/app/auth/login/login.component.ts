@@ -62,7 +62,12 @@ export class LoginComponent implements OnInit {
         'name': "Admin",
         "type": "admin"
       }
-    } else {
+    }else if (userType == 'superuser') {
+      temp = {
+        'name': "Superuser",
+        "type": "superuser"
+      }
+    }  else {
       temp = {
         'name': "Employee",
         "type": "employee"
@@ -77,7 +82,13 @@ export class LoginComponent implements OnInit {
     this.loadingFullScreenService.startLoading();
     const username = this.loginForm.value.username;
     const password = this.loginForm.value.password;
-    if (username == 'admin' && password == 'password') {
+    if (username == 'prateek' && password == 'password') {
+      setTimeout(() => {
+        this.loadingFullScreenService.stopLoading();
+        this.setUser('superuser')
+        this.router.navigate(['/companylists']);
+      }, 1000)
+    } else if (username == 'admin' && password == 'password') {
       setTimeout(() => {
         this.loadingFullScreenService.stopLoading();
         this.setUser('admin')

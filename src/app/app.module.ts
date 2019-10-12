@@ -47,6 +47,10 @@ import { HolidayComponent } from './pages/holiday/holiday.component';
 import { EmployeeCreateComponent } from './pages/employee-create/employee-create.component';
 import { NewsCreateComponent } from './pages/news-create/news-create.component';
 import { CalendarComponent } from './pages/calendar/calendar.component';
+import { CompanyListsComponent } from './pages/company-lists/company-lists.component';
+import { CompanyCreateComponent } from './pages/company-create/company-create.component';
+import { CompanyUsersComponent } from './pages/company-users/company-users.component';
+import { CompanyUsersCreateComponent } from './pages/company-users-create/company-users-create.component';
 
 
 const globalRippleConfig: RippleGlobalOptions = {
@@ -92,6 +96,10 @@ const MY_FORMATS = {
     EmployeeCreateComponent,
     NewsCreateComponent,
     CalendarComponent,
+    CompanyListsComponent,
+    CompanyCreateComponent,
+    CompanyUsersComponent,
+    CompanyUsersCreateComponent,
   ],
   imports: [
     BrowserModule,
