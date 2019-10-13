@@ -66,7 +66,7 @@
         {
           "name": "Status",
           "key": "status",
-          "display": "text",
+          "display": "status",
           "sort": false,
           "search": true,
           "searchBy": "text",
@@ -75,7 +75,7 @@
         {
           "name": "Admin Created",
           "key": "admin_created",
-          "display": "text",
+          "display": "boolean",
           "sort": false,
           "search": false,
           "searchBy": "text",
@@ -86,6 +86,15 @@
           "key": "created",
           "display": "text",
           "sort": true,
+          "search": false,
+          "searchBy": "text",
+          "searchByVal": ""
+        },
+        {
+          "name": "Action",
+          "key": "action",
+          "display": "button",
+          "sort": false,
           "search": false,
           "searchBy": "text",
           "searchByVal": ""

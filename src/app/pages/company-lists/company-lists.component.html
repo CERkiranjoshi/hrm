@@ -27,10 +27,14 @@
     </section>
     <section fxFlex="30">
       <section fxLayout="row" fxLayoutGap="20px" fxLayoutAlign="flex-end baseline">
-        <button *ngIf="authService.getUserType()=='superuser'" (click)="addNewCompany()" type="button" title="Add  New Employee" mat-raised-button color="accent"
-         >
-          <mat-icon>person_add</mat-icon>
+        <button *ngIf="authService.getUserType()=='superuser'" (click)="addNewCompany()" type="button"
+          title="Add  New Employee" mat-raised-button color="accent">
+          <mat-icon>add_circle</mat-icon>
           <span class="ml-5">Add New Company</span>
+        </button>
+        <button *ngIf="authService.getUserType()=='superuser'" (click)="archiveCompany()" type="button" title="Archive Company"
+          mat-flat-button color="warn">
+          <mat-icon>archive</mat-icon>
         </button>
       </section>
     </section>
@@ -143,8 +147,32 @@
             {{element[column.key] * 1000 | date:"dd MMM yyyy ',' h:mm a" : '+1100'}}
           </span>
           <span *ngIf="column.display=='status'">
-            <span class="claim-status-dot {{element[column.key]}}"></span> {{getStatusViewValue(element[column.key])}}
+            <span class="view-status-dot {{element[column.key]}}"></span> {{element[column.key]}}
           </span>
+          <section *ngIf="column.display=='boolean'">
+            <section *ngIf="element.admin_created == true">
+              <button type="button" mat-icon-button color="accent">
+                <mat-icon>done_outline</mat-icon>
+              </button>
+            </section>
+            <section *ngIf="element.admin_created == false">
+              <button type="button" mat-icon-button color="warn">
+                <mat-icon>close</mat-icon>
+              </button>
+            </section>
+          </section>
+          <section *ngIf="column.display=='button'">
+            <section class="display-inline">
+              <button type="button" mat-icon-button title="Add New Admin User" color="accent">
+                <mat-icon>person_add</mat-icon>
+              </button>
+            </section>
+            <section class="display-inline ml-10">
+              <button type="button" mat-icon-button title="Archive company" color="warn">
+                <mat-icon>archive</mat-icon>
+              </button>
+            </section>
+          </section>
         </mat-cell>
       </ng-container>
 

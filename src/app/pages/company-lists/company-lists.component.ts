@@ -87,6 +87,10 @@ export class CompanyListsComponent implements OnInit {
     this.router.navigate(['/addcompany']); 
   }
 
+  archiveCompany(){
+ this.notificationService.handleNotification("Select Company for archive");
+  }
+
   initFilterList(filterList) {
     this.filterList.sortBy = filterList.sort_by;
     this.filterList.sortOrder = filterList.sort_order;

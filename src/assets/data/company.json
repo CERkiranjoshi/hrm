@@ -8,7 +8,7 @@
       "phone": "3742983729",
       "status": "active",
       "department": "IT",
-      "admin_created": "true",
+      "admin_created": true,
       "leaves": "12/24",
       "created": "12 JUN 2019"
     },
@@ -20,7 +20,7 @@
       "phone": "7879540437",
       "status": "inactive",
       "department": "IT",
-      "admin_created": "true",
+      "admin_created": true,
       "leaves": "10/24",
       "created": "12 JUN 2019"
     },
@@ -32,7 +32,7 @@
       "phone": "7879540437",
       "status": "inactive",
       "department": "Sales",
-      "admin_created": "false",
+      "admin_created": false,
       "leaves": "10/24",
       "created": "12 JUN 2019"
     },
@@ -44,7 +44,7 @@
       "phone": "7879540437",
       "status": "inactive",
       "department": "HR",
-      "admin_created": "false",
+      "admin_created": false,
       "leaves": "10/24",
       "created": "12 JUN 2016"
     },
@@ -56,7 +56,7 @@
       "phone": "3742983729",
       "status": "active",
       "department": "IT",
-      "admin_created": "false",
+      "admin_created": false,
       "leaves": "12/24",
       "created": "12 JUN 2019"
     },
@@ -68,7 +68,7 @@
       "phone": "7879500437",
       "status": "inactive",
       "department": "IT",
-      "admin_created": "false",
+      "admin_created": false,
       "leaves": "10/24",
       "created": "12 JUN 2019"
     },
@@ -80,7 +80,7 @@
       "phone": "7879540437",
       "status": "inactive",
       "department": "Sales",
-      "admin_created": "false",
+      "admin_created": false,
       "leaves": "10/24",
       "created": "12 JUN 2019"
     },
@@ -92,7 +92,7 @@
       "phone": "7879540437",
       "status": "active",
       "department": "HR",
-      "admin_created": "false",
+      "admin_created": false,
       "leaves": "10/24",
       "created": "12 JUN 2016"
     },
@@ -104,7 +104,7 @@
       "phone": "3742983729",
       "status": "active",
       "department": "IT",
-      "admin_created": "false",
+      "admin_created": false,
       "leaves": "12/24",
       "created": "12 JUN 2019"
     },
@@ -116,7 +116,7 @@
       "phone": "7879500437",
       "status": "inactive",
       "department": "IT",
-      "admin_created": "false",
+      "admin_created":false,
       "leaves": "10/24",
       "created": "12 JUN 2019"
     },
@@ -128,7 +128,7 @@
       "phone": "7879540437",
       "status": "inactive",
       "department": "Sales",
-      "admin_created": "false",
+      "admin_created": false,
       "leaves": "10/24",
       "created": "12 JUN 2019"
     },
@@ -140,7 +140,7 @@
       "phone": "7879540437",
       "status": "active",
       "department": "HR",
-      "admin_created": "false",
+      "admin_created": false,
       "leaves": "10/24",
       "created": "12 JUN 2016"
     }

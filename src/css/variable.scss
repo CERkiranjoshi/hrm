@@ -39,3 +39,11 @@ $success-tint: #bee4c7;
 // $error : #f44336;
 // $info : $theme-secondary;
 // $success : #28a745;
+
+$statusList: (
+  "NO_DOCUMENTS": #a55039,
+  "inactive": #ff0000,
+  "REJECTED": #ff0000,
+  "ARCHIVED": #e6e6e6,
+  "active": #28a745,
+);
