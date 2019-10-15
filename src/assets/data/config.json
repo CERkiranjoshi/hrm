@@ -96,9 +96,74 @@
       "url": "userslists",
       "name": "Users Lists",
       "icon": "supervised_user_circle",
-      "active": false,
+      "active": true,
       "restrictedUsersGroup": [
         "superuser"
+      ],
+      "displayColumns": [
+        {
+          "name": "User Name",
+          "key": "username",
+          "display": "text",
+          "sort": false,
+          "search": true,
+          "searchBy": "text",
+          "searchByVal": ""
+        },
+        {
+          "name": "Company Name",
+          "key": "name",
+          "display": "text",
+          "sort": false,
+          "search": true,
+          "searchBy": "text",
+          "searchByVal": ""
+        },
+        {
+          "name": "Address",
+          "key": "address",
+          "display": "text",
+          "sort": false,
+          "search": true,
+          "searchBy": "text",
+          "searchByVal": ""
+        },
+        {
+          "name": "Email",
+          "key": "email",
+          "display": "text",
+          "sort": false,
+          "search": true,
+          "searchBy": "text",
+          "searchByVal": ""
+        },
+        {
+          "name": "Phone",
+          "key": "phone",
+          "display": "text",
+          "sort": false,
+          "search": true,
+          "searchBy": "text",
+          "searchByVal": ""
+        },
+        {
+          "name": "Status",
+          "key": "status",
+          "display": "status",
+          "sort": false,
+          "search": true,
+          "searchBy": "text",
+          "searchByVal": ""
+        },
+        {
+          "name": "Created Date",
+          "key": "created",
+          "display": "text",
+          "sort": true,
+          "search": true,
+          "searchBy": "daterange",
+          "searchByVal": ""
+        }
       ]
     },
     {

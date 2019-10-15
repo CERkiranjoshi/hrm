@@ -1,3 +1,192 @@
-<p>
-  company-users works!
-</p>
+<section class="container mt-15">
+  <section fxLayout="row" fxLayout.xs="column" fxLayoutGap="20px" fxLayoutAlign="flex-start center">
+    <section fxFlex="70">
+      <section fxLayout="row" fxLayoutGap="20px" fxLayoutAlign="flex-start center">
+        <mat-chip-list #chipList>
+          <section *ngIf="filterList.filterColumns.length>1">
+            <mat-chip color="primary" selected [removable]="removable" (removed)="removeAllFilter()">
+              Clear All
+              <mat-icon matChipRemove color="accent" *ngIf="removable">cancel</mat-icon>
+            </mat-chip>
+          </section>
+          <section *ngIf="filterList.sortBy!=''">
+            <mat-chip color="basic" selected>
+              Sort by : {{filterList.sortName}} : {{ filterList.sortOrder | titlecase}}
+            </mat-chip>
+          </section>
+          <section *ngIf="filterList.filterColumns.length>0">
+            <mat-chip color="basic" selected *ngFor="let filter of filterList.filterColumns ; index as i;" [removable]="removable"
+              (removed)="removeFilter(i)">
+              <span *ngIf="filter.type!='daterange'">{{filter.name}} : {{filter.displayValue}}</span>
+              <span *ngIf="filter.type=='daterange'">{{filter.name}} : {{filter.startDate}} : {{filter.endDate}}</span>
+              <mat-icon matChipRemove color="accent" *ngIf="removable">cancel</mat-icon>
+            </mat-chip>
+          </section>
+        </mat-chip-list>
+      </section>
+    </section>
+    <section fxFlex="30">
+      <section fxLayout="row" fxLayoutGap="20px" fxLayoutAlign="flex-end baseline">
+        <button *ngIf="authService.getUserType()=='superuser'" type="button"
+          title="Add New Company Admin" mat-raised-button color="accent">
+          <mat-icon>add_circle</mat-icon>
+          <span class="ml-5">Add New Company Admin</span>
+        </button>
+        <button *ngIf="authService.getUserType()=='superuser'" (click)="archiveCompany()" type="button" title="Archive User"
+          mat-flat-button color="warn">
+          <mat-icon>archive</mat-icon>
+        </button>
+      </section>
+    </section>
+  </section>
+  <section id="file-upload-section" *ngIf="fileUploadView">
+    <app-material-file-upload [defaultBrowseOpen]="true" (refreshListOnClose)="browseDocument();getDocumentLists()" ></app-material-file-upload>
+  </section>
+</section>
+<section class="container mt-15">
+  <section class="table-container mat-elevation-z8 custom-scrollbar" fxLayout="column">
+    <mat-table fxFlex="100" [dataSource]="dataSource">
+      <ng-container matColumnDef="select">
+        <mat-header-cell *matHeaderCellDef>
+          <mat-checkbox (change)="$event ? masterToggle() : null" [checked]="selection.hasValue() && isAllSelected()"
+            [indeterminate]="selection.hasValue() && !isAllSelected()" [aria-label]="checkboxLabel()">
+          </mat-checkbox>
+        </mat-header-cell>
+        <mat-cell *matCellDef="let row">
+          <mat-checkbox (click)="$event.stopPropagation()" (change)="$event ? selection.toggle(row) : null" [checked]="selection.isSelected(row)"
+            [aria-label]="checkboxLabel(row)">
+          </mat-checkbox>
+        </mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="{{column.key}}" *ngFor="let column of pageConfigData.displayColumns">
+        <mat-header-cell *matHeaderCellDef>
+          {{column.name}}
+          <button *ngIf="column.search || column.sort" class="ml-10" #levelOneTrigger="matMenuTrigger" (click)="setSelectedDropdownFilterClass(column,pageConfigData[column.searchByVal]);$event.stopImmediatePropagation();"
+            mat-icon-button [matMenuTriggerFor]="filterMenu">
+            <mat-icon aria-hidden="false" aria-label="Filter">filter_list</mat-icon>
+          </button>
+          <mat-menu #filterMenu="matMenu" xPosition="before">
+            <ng-template matMenuContent>
+              <section *ngIf="column.sort">
+                <button [ngClass]="{'highlight-background text-bold': column.key==filterList.sortBy && filterList.sortOrder=='ASC'}"
+                  mat-menu-item title="Sort by {{column.name}} ASC" (click)="changeSort(column,'ASC')">
+                  <mat-icon color="{{column.key==filterList.sortBy && filterList.sortOrder=='ASC' ? 'primary':'accent'}}">sort</mat-icon>
+                  <span>Sort <mat-icon>vertical_align_top</mat-icon></span>
+                </button>
+                <button [ngClass]="{'highlight-background text-bold': column.key==filterList.sortBy && filterList.sortOrder=='DESC'}"
+                  mat-menu-item title="Sort by {{column.name}} DESC" (click)="changeSort(column,'DESC')">
+                  <mat-icon color="{{column.key==filterList.sortBy && filterList.sortOrder=='DESC' ? 'primary':'accent'}}">sort</mat-icon>
+                  <span>Sort <mat-icon>vertical_align_bottom</mat-icon></span>
+                </button>
+              </section>
+              <section *ngIf="column.search && column.searchBy=='text'">
+                <mat-divider></mat-divider>
+                <mat-form-field appearance="fill" (click)="$event.stopImmediatePropagation()" floatLabel="never">
+                  <mat-label>Search by {{column.name}}</mat-label>
+                  <input matInput #inputbox placeholder="Search by {{column.name}}" [(ngModel)]="column.searchByVal"
+                    (keyup.enter)="filterData(column,inputbox.value,inputbox.value);">
+                  <mat-icon matSuffix color="accent">search</mat-icon>
+                </mat-form-field>
+              </section>
+              <section *ngIf="column.search && column.searchBy=='dropdown'">
+                <mat-divider></mat-divider>
+                <section (click)="$event.stopPropagation()">
+                  <button mat-menu-item disabled>
+                    <mat-icon color="accent">notes</mat-icon>
+                    <span>Filter by {{column.name}}</span>
+                  </button>
+                </section>
+                <mat-divider></mat-divider>
+                <button [ngClass]="{'highlight-background text-bold': param.selected }" mat-menu-item title="Filter by {{param.value}}"
+                  (click)="filterData(column,param.value,param.key)" *ngFor="let param of pageConfigData[column.searchByVal]">
+                  <mat-icon *ngIf="!param.selected">bookmark_border</mat-icon>
+                  <mat-icon *ngIf="param.selected" color="primary">bookmark</mat-icon>
+                  <span>{{param.value}}</span>
+                </button>
+                <!-- <section class="text-center" *ngIf="column.searchByVal=='qcUserLists'">
+                  <mat-divider></mat-divider>
+                  <button [disabled]="selection.selected.length==0" class="mt-10" title="Allocate" type="button" mat-raised-button color="primary" (click)="allocateClaim()">
+                    <mat-icon>ballot</mat-icon>
+                    <span class="ml-5">Allocate</span>
+                  </button>
+                </section> -->
+              </section>
+              <section  *ngIf="column.search && column.searchBy=='daterange'">
+                  <mat-divider></mat-divider>
+                  <section (click)="$event.stopPropagation()">
+                    <button mat-menu-item disabled>
+                      <mat-icon color="accent">date_range</mat-icon>
+                      <span>Filter by daterange</span>
+                    </button>
+                  </section>
+                  <mat-divider></mat-divider>
+                  <section class="custom-daterange-filter pb-10 mt-10 pl-20" (click)="$event.stopPropagation()">
+                      <input type="text" matInput ngxDaterangepickerMd [locale]="{applyLabel: 'Ok', format: 'DD MMM YYYY'}"
+                          [ranges]="ranges"
+                          [showCustomRangeLabel]="true"
+                          [alwaysShowCalendars]="true"
+                          [showClearButton]="false"
+                          [(ngModel)]="selectedDateRange" name="daterange" />
+                        </section>
+                  <section class="text-center">
+                    <mat-divider></mat-divider>
+                    <button class="mt-10" title="Apply Date Filter" type="button" mat-raised-button color="primary" (click)="filterData(column,'daterange')">
+                      <mat-icon>date_range</mat-icon>
+                      <span class="ml-5">Apply Filter</span>
+                    </button>
+                  </section>
+              </section>
+            </ng-template>
+          </mat-menu>
+        </mat-header-cell>
+        <mat-cell *matCellDef="let element">
+          <span *ngIf="column.display=='text'">
+            {{element[column.key]}}
+          </span>
+          <span *ngIf="column.display=='date'">
+            {{element[column.key] * 1000 | date:"dd MMM yyyy ',' h:mm a" : '+1100'}}
+          </span>
+          <span *ngIf="column.display=='status'">
+            <span class="view-status-dot {{element[column.key]}}"></span> {{element[column.key]}}
+          </span>
+          <section *ngIf="column.display=='boolean'">
+            <section *ngIf="element.admin_created == true">
+              <button type="button" mat-icon-button color="accent">
+                <mat-icon>done_outline</mat-icon>
+              </button>
+            </section>
+            <section *ngIf="element.admin_created == false">
+              <button type="button" mat-icon-button color="warn">
+                <mat-icon>close</mat-icon>
+              </button>
+            </section>
+          </section>
+          <section *ngIf="column.display=='button'">
+            <!-- <section class="display-inline">
+              <button type="button" mat-icon-button title="Add New Admin User" color="accent">
+                <mat-icon>person_add</mat-icon>
+              </button>
+            </section> -->
+            <section class="display-inline ml-10">
+              <button type="button" mat-icon-button title="Archive company" color="warn">
+                <mat-icon>archive</mat-icon>
+              </button>
+            </section>
+          </section>
+        </mat-cell>
+      </ng-container>
+
+      <mat-header-row *matHeaderRowDef="displayedColumns;sticky:true;"></mat-header-row>
+      <mat-row [ngClass]="{'highlight-row': row.id == lastUpdatedCaseId}" *matRowDef="let row; columns: displayedColumns;"></mat-row>
+    </mat-table>
+    <section *ngIf="dataSource.data.length === 0" fxLayout="row" fxLayoutAlign="center center">
+      <mat-list>
+        <mat-list-item> No data available. </mat-list-item>
+      </mat-list>
+    </section>
+  </section>
+  <section [ngClass]="{'hide' : dataSource.data.length == 0 }" class="mt-10" fxLayout="column">
+    <mat-paginator #paginator [pageSize]="pageSize" [pageIndex]="pageIndex" [length]="total" [pageSizeOptions]="[10, 20,50]" (page)="pageChanged($event)"
+      showFirstLastButtons></mat-paginator>
+  </section>
+</section>
