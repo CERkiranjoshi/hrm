@@ -278,7 +278,7 @@
         {
           "name": "Status",
           "key": "status",
-          "display": "text",
+          "display": "status",
           "sort": false,
           "search": true,
           "searchBy": "text",

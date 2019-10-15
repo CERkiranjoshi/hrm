@@ -1,12 +1,12 @@
 <section class="upload-section p-10 mt-10">
   <section fxLayout="row" fxFlexFill fxLayoutAlign="baseline baseline" fxLayoutGap="20px" fxLayout.xs="column">
     <mat-form-field fxFlex="90" floatLabel="never">
-      <input matInput placeholder="Upload Document" value="Upload Document" type="text" readonly>
-      <span class="upload-button" (click)="onClick()" matSuffix>Browse document</span>
+      <input matInput placeholder="Upload {{text}}" value="Upload {{text}}" type="text" readonly>
+      <span class="upload-button" (click)="onClick()" matSuffix>Browse {{text}}</span>
       <span matPrefix class="file-upload-prefix mr-10"><mat-icon color="primary">cloud_upload</mat-icon></span>
     </mat-form-field>
-    <button type="button" mat-button title="Clear All" color="primary" [disabled]="buttonRemoveDisabled" (click)="removeAll()">
-      <mat-icon>clear_all</mat-icon> Clear All
+    <button type="button" mat-button title="Clear" color="primary" [disabled]="buttonRemoveDisabled" (click)="removeAll()">
+      <mat-icon>clear_all</mat-icon> Clear
     </button>
     <button type="button"  mat-button title="Close" color="warn" (click)="removeAll()">
       <mat-icon>cancel</mat-icon> Close

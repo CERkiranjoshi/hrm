@@ -32,6 +32,10 @@
           <mat-icon>person_add</mat-icon>
           <span class="ml-5">Add New Employee</span>
         </button>
+        <button *ngIf="authService.getUserType()=='admin'" type="button" title="Archive User"
+            mat-flat-button color="warn">
+        <mat-icon>archive</mat-icon>
+      </button>
       </section>
     </section>
   </section>
@@ -143,7 +147,7 @@
             {{element[column.key] * 1000 | date:"dd MMM yyyy ',' h:mm a" : '+1100'}}
           </span>
           <span *ngIf="column.display=='status'">
-            <span class="claim-status-dot {{element[column.key]}}"></span> {{getStatusViewValue(element[column.key])}}
+            <span class="view-status-dot {{element[column.key]}}"></span> {{element[column.key]}}
           </span>
         </mat-cell>
       </ng-container>

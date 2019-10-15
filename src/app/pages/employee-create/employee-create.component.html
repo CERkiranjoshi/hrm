@@ -1,6 +1,7 @@
 <section class="container" [@InOut]="'in'">
   <section>
-    <app-title callBack="true" showBackButton="true" (callBackFunc)='backToEmployeelist($event)' title="ADD NEW EMPLOYEE"></app-title>
+    <app-title callBack="true" showBackButton="true" (callBackFunc)='backToEmployeelist($event)'
+      title="ADD NEW EMPLOYEE"></app-title>
   </section>
   <section>
     <section class="customer-declartion policy-details" fxLayout="row">
@@ -14,15 +15,35 @@
             [formGroup]="policyDetails">
             <section fxLayout="row" fxLayoutGap="20px">
               <mat-form-field fxFlex="50">
-                <input type="text" matInput placeholder="Employee ID" formControlName="emp_id"
-                  [required]="policyDetails.get('policy_type').value == 'CORPORATE'" autocomplete="off">
-                <mat-error>Invalid or Missing employee ID.</mat-error>
+                <input type="text" matInput placeholder="Employee name" formControlName="claimant_name" required
+                  autocomplete="off">
+                <mat-error>Invalid or Missing Employee name.</mat-error>
               </mat-form-field>
               <mat-form-field fxFlex="50">
+                <mat-label>Department</mat-label>
+                <mat-select formControlName="department" required>
+                  <mat-option *ngFor="let item of dropdownValues.department" [value]="item">
+                    {{item}}
+                  </mat-option>
+                </mat-select>
+                <mat-error>Please select Department manager.</mat-error>
+              </mat-form-field>
+            </section>
+            <section fxLayout="row" fxLayoutGap="20px">
+              <mat-form-field fxFlex="50">
                 <mat-label>Reporting Manager</mat-label>
-                <mat-select formControlName="policy_type" required>
-                  <mat-option *ngFor="let item of dropdownValues.policy_type | keyvalue" [value]="item.key">
-                    {{item.value}}
+                <mat-select formControlName="reporting_manager" required>
+                  <mat-option *ngFor="let item of dropdownValues.reporting_manager" [value]="item">
+                    {{item}}
+                  </mat-option>
+                </mat-select>
+                <mat-error>Please select reporting manager.</mat-error>
+              </mat-form-field>
+              <mat-form-field fxFlex="50">
+                <mat-label>Position</mat-label>
+                <mat-select formControlName="roles" required>
+                  <mat-option *ngFor="let item of dropdownValues.roles" [value]="item">
+                    {{item}}
                   </mat-option>
                 </mat-select>
                 <mat-error>Please select reporting manager.</mat-error>
@@ -30,32 +51,25 @@
             </section>
             <section fxLayout="row" fxLayoutGap="20px">
               <mat-form-field fxFlex="50">
-                <input type="text" matInput placeholder="Employee name" formControlName="claimant_name" required
-                  autocomplete="off">
-                <mat-error>Invalid or Missing Employee name.</mat-error>
-              </mat-form-field>
-              <mat-form-field fxFlex="50">
                 <input type="email" matInput placeholder="Email address" formControlName="claimant_email" required
                   autocomplete="off">
                 <mat-error>Invalid or Missing email address.</mat-error>
               </mat-form-field>
-            </section>
-            <section fxLayout="row" fxLayoutGap="20px">
               <mat-form-field fxFlex="50">
                 <input type="text" matInput maxlength="10" placeholder="Employee phone number"
                   formControlName="claimant_phone" required autocomplete="off">
                 <mat-error>Invalid or Missing phone number.</mat-error>
               </mat-form-field>
-              <mat-form-field fxFlex="50">
-                <input type="text" matInput placeholder="Employee age" maxlength="3" formControlName="claimant_age"
-                  required autocomplete="off">
-                <mat-error>Invalid or Missing age.</mat-error>
-              </mat-form-field>
             </section>
             <mat-form-field>
-              <input type="text" matInput placeholder="Employee address" formControlName="claimant_address" required
-                autocomplete="off">
-              <mat-error>Invalid or Missing Employee address.</mat-error>
+              <input type="text" matInput placeholder="Employee address line 1" formControlName="claimant_address1"
+                required autocomplete="off">
+              <mat-error>Invalid or Missing Employee address line 1.</mat-error>
+            </mat-form-field>
+            <mat-form-field>
+              <input type="text" matInput placeholder="Employee address line 2" formControlName="claimant_address2"
+                required autocomplete="off">
+              <mat-error>Invalid or Missing Employee address line 2.</mat-error>
             </mat-form-field>
             <section fxLayout="row" fxLayoutGap="20px">
               <mat-form-field fxFlex="33.33">
@@ -88,10 +102,9 @@
                 <mat-hint><strong>Format must be:</strong> DD-MMM-YYYY </mat-hint>
               </mat-form-field>
               <mat-form-field fxFlex="33.33">
-                <input #lineOfTreatment type="text" matInput placeholder="About employee" maxlength="255"
-                  formControlName="claimant_lot" required autocomplete="off">
-                <mat-error>Invalid or Missing treatment info.</mat-error>
-                <mat-hint align="end">{{lineOfTreatment.value.length}} / 255</mat-hint>
+                <input type="text" matInput placeholder="Employee age" maxlength="3" formControlName="claimant_age"
+                  required autocomplete="off">
+                <mat-error>Invalid or Missing age.</mat-error>
               </mat-form-field>
               <section fxFlex="33.33" class="mt-25 mb-20">
                 <label>Gender * </label>
@@ -102,15 +115,22 @@
                 </mat-radio-group>
               </section>
             </section>
+            <section fxLayout="row" fxLayoutGap="20px">
+                <label>Photo </label>
+            </section>
+            <section id="file-upload-section" fxLayout="row" fxLayoutGap="20px">
+              <section fxFlex="100">
+                  <app-material-file-upload [text]="'Photo'" [defaultBrowseOpen]="false"  ></app-material-file-upload>
+              </section>
+            </section>
           </form>
         </mat-card-content>
       </mat-card>
     </section>
     <!-- [disabled]="policyDetails.invalid || claimantDetails.invalid" (click)="saveCustomerDetails()" -->
     <section class="container" fxLayout="row" fxFlexFill fxLayoutAlign="center center" fxLayout.xs="column">
-      <button class="mt-10 mb-20" type="button" mat-raised-button color="primary"
-       >SAVE
-        EMPLOYEE DETAILS
+      <button class="mt-10 mb-20" type="button" mat-raised-button color="primary">CREATE
+        EMPLOYEE
       </button>
     </section>
   </section>

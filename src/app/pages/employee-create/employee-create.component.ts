@@ -32,8 +32,11 @@ export class EmployeeCreateComponent implements OnInit {
   public dropdownValues = {
     state: {},
     gender: {},
-    insurer: [],
-    policy_type: {}
+    insurer : [],
+    reporting_manager: [],
+    policy_type: [],
+    department : [],
+    roles : []
   };
   public caseDetails = {
     member_id: "",
@@ -101,7 +104,13 @@ export class EmployeeCreateComponent implements OnInit {
       insurer: new FormControl('', {
         validators: [Validators.required]
       }),
-      policy_type: new FormControl('', {
+      roles: new FormControl('Developer', {
+        validators: [Validators.required]
+      }),
+      reporting_manager: new FormControl('', {
+        validators: [Validators.required]
+      }),
+      department: new FormControl('Information Technology', {
         validators: [Validators.required]
       }),
       corporate_name: new FormControl('', {
@@ -128,7 +137,10 @@ export class EmployeeCreateComponent implements OnInit {
       claimant_email: new FormControl('', {//https://angular-templates.io/tutorials/about/angular-forms-and-validations '^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$'
         validators: [Validators.required, Validators.pattern('^([\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,6})?$')]
       }),
-      claimant_address: new FormControl('', {
+      claimant_address1: new FormControl('', {
+        validators: [Validators.required]
+      }),
+      claimant_address2: new FormControl('', {
         validators: [Validators.required]
       }),
       claimant_pincode: new FormControl('', {
@@ -158,6 +170,10 @@ export class EmployeeCreateComponent implements OnInit {
   }
 
   fetchDropdownValues() {
+
+    this.dropdownValues.reporting_manager = ["kiran joshi","Jayesh Desai","Prateek Jain"]
+    this.dropdownValues.department = ["Information Technology","Finance", "Human Resource","Sales & Marketing","Admin Department"]
+    this.dropdownValues.roles = ['Manager','Developer','Tester','Lead Developer']
     // this.loadingFullScreenService.startLoading();
     // this.apiService.fetchClaimCreateDropdownValues()
     //   .subscribe(
