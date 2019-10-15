@@ -73,30 +73,12 @@
           "searchByVal": ""
         },
         {
-          "name": "Admin Created",
-          "key": "admin_created",
-          "display": "boolean",
-          "sort": false,
-          "search": false,
-          "searchBy": "text",
-          "searchByVal": ""
-        },
-        {
           "name": "Created Date",
           "key": "created",
           "display": "text",
           "sort": true,
-          "search": false,
-          "searchBy": "text",
-          "searchByVal": ""
-        },
-        {
-          "name": "Action",
-          "key": "action",
-          "display": "button",
-          "sort": false,
-          "search": false,
-          "searchBy": "text",
+          "search": true,
+          "searchBy": "daterange",
           "searchByVal": ""
         }
       ]
@@ -114,7 +96,7 @@
       "url": "userslists",
       "name": "Users Lists",
       "icon": "supervised_user_circle",
-      "active": true,
+      "active": false,
       "restrictedUsersGroup": [
         "superuser"
       ]

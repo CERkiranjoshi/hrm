@@ -82,7 +82,7 @@ export class LoginComponent implements OnInit {
     this.loadingFullScreenService.startLoading();
     const username = this.loginForm.value.username;
     const password = this.loginForm.value.password;
-    if (username == 'prateek' && password == 'password') {
+    if ((username == 'prateek' && password == 'password') || (username == 'superuser' && password == 'password')) {
       setTimeout(() => {
         this.loadingFullScreenService.stopLoading();
         this.setUser('superuser')
