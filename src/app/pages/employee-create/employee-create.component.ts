@@ -11,6 +11,7 @@ import { LoadingFullScreenService } from 'src/app/common/service/loading-fullscr
 import { inOutXYAnimation } from 'src/app/animations';
 import { Observable } from 'rxjs';
 import { startWith, map } from 'rxjs/operators';
+import * as _ from 'lodash';
 
 @Injectable({
   providedIn: 'root',
@@ -38,6 +39,7 @@ export class EmployeeCreateComponent implements OnInit {
     department : [],
     roles : []
   };
+  filteredqcDropdownValues : any
   public caseDetails = {
     member_id: "",
     claimant_amount: "",
@@ -51,6 +53,8 @@ export class EmployeeCreateComponent implements OnInit {
 
   maxDate = new Date();
 
+  reporting_manager = ""
+
   insurerList: string[];
   filteredOptions: Observable<string[]>;
 
@@ -59,10 +63,22 @@ export class EmployeeCreateComponent implements OnInit {
 
 
   ngOnInit() {
+    
     this.user = this.authService.getUser();
     this.policyDetails = this.createPolicyFormGroup();
     // this.policyFormControlValueChanged();
     this.fetchDropdownValues();
+  }
+
+  filterParticular(search, type, element) {
+    if (!search) {
+      this.filteredqcDropdownValues[type] = _.cloneDeep(this.dropdownValues[type]);
+      return;
+    } else {
+      search = search.toLowerCase();
+    }
+    let mapping = _.cloneDeep(this.dropdownValues[type]);
+    this.filteredqcDropdownValues[type] = mapping.filter(key => key.toLowerCase().indexOf(search) > -1)
   }
 
   setFilteredOptions() {
@@ -171,9 +187,11 @@ export class EmployeeCreateComponent implements OnInit {
 
   fetchDropdownValues() {
 
-    this.dropdownValues.reporting_manager = ["kiran joshi","Jayesh Desai","Prateek Jain"]
+    this.dropdownValues.reporting_manager = ["kiran joshi","Jayesh Desai","Prateek Jain","Animesh kalkar" , "Anil Pandit","Rutvik Jani","Hardik Mehta"]
     this.dropdownValues.department = ["Information Technology","Finance", "Human Resource","Sales & Marketing","Admin Department"]
     this.dropdownValues.roles = ['Manager','Developer','Tester','Lead Developer']
+
+    this.filteredqcDropdownValues = _.cloneDeep(this.dropdownValues)
     // this.loadingFullScreenService.startLoading();
     // this.apiService.fetchClaimCreateDropdownValues()
     //   .subscribe(

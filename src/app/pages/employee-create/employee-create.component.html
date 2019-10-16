@@ -30,14 +30,19 @@
               </mat-form-field>
             </section>
             <section fxLayout="row" fxLayoutGap="20px">
+              <!-- (optionSelected)="particularMappingSelected(element,$event)" -->
               <mat-form-field fxFlex="50">
-                <mat-label>Reporting Manager</mat-label>
-                <mat-select formControlName="reporting_manager" required>
-                  <mat-option *ngFor="let item of dropdownValues.reporting_manager" [value]="item">
-                    {{item}}
-                  </mat-option>
-                </mat-select>
-                <mat-error>Please select reporting manager.</mat-error>
+                <input matInput #part class="form-control" placeholder="Reporting Manager" required
+                  formControlName="reporting_manager"
+                  autocomplete="off"
+                  [matAutocomplete]="auto"
+                  (keyup)="filterParticular($event.target.value,'reporting_manager',element)"
+                  [value]="reporting_manager">
+                  <mat-autocomplete #auto="matAutocomplete" autoActiveFirstOption disableRipple class="custom-scrollbar"  >
+                    <mat-option [ngClass]="{'color-primary': option==reporting_manager}" *ngFor="let option of filteredqcDropdownValues.reporting_manager" [value]="option">
+                      {{option}}
+                    </mat-option>
+                  </mat-autocomplete>
               </mat-form-field>
               <mat-form-field fxFlex="50">
                 <mat-label>Position</mat-label>
