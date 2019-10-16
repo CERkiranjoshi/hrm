@@ -176,7 +176,7 @@
       ]
     },
     {
-      "url": "news",
+      "url": "dashboard",
       "name": "Latest News",
       "icon": "notes",
       "active": true,
@@ -352,7 +352,25 @@
     {
       "url": "attendance",
       "name": "Attendance",
+      "active": false,
+      "restrictedUsersGroup": [
+        "employee"
+      ],
+      "icon": "pan_tool"
+    },
+    {
+      "url": "leavelists",
+      "name": "Leaves",
       "active": true,
+      "restrictedUsersGroup": [
+        "employee"
+      ],
+      "icon": "pan_tool"
+    },
+    {
+      "url": "leaveapply",
+      "name": "Apply for Leave",
+      "active": false,
       "restrictedUsersGroup": [
         "employee"
       ],
@@ -365,7 +383,44 @@
       "restrictedUsersGroup": [
         "employee"
       ],
-      "icon": "motorcycle"
+      "icon": "motorcycle",
+      "displayColumns": [
+        {
+          "name": "Date",
+          "key": "holidaydate",
+          "display": "text",
+          "sort": false,
+          "search": false,
+          "searchBy": "text",
+          "searchByVal": ""
+        },
+        {
+          "name": "Day",
+          "key": "day",
+          "display": "text",
+          "sort": false,
+          "search": false,
+          "searchBy": "text",
+          "searchByVal": ""
+        },
+        {
+          "name": "Holiday",
+          "key": "holiday",
+          "display": "text",
+          "sort": false,
+          "search": false,
+          "searchBy": "text",
+          "searchByVal": ""
+        },
+        {
+          "name": "Restricted / Optional",
+          "key": "holidaytype",
+          "display": "text",
+          "sort": false,
+          "search": false,
+          "searchBy": "text",
+          "searchByVal": ""
+        }]
     },
     {
       "url": "login",

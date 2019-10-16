@@ -1,0 +1,123 @@
+{
+  "data": [
+    {
+      "id":1,
+      "holidaydate": "Jan 01 2019",
+      "day" : "Tuesday",
+      "holiday": "New Year's Eve",
+      "holidaytype": "Restricted"
+    },
+    {
+      "id":2,
+      "holidaydate": "Jan 14 2019",
+      "day" : "Monday",
+      "holiday": "Makar Sankranti / Pongal",
+      "holidaytype": "Restricted"
+    },
+    {
+      "id":3,
+      "holidaydate": "Jan 26 2019",
+      "day" : "Saturday",
+      "holiday": "Republic Day",
+      "holidaytype": "Restricted"
+    },
+    {
+      "id":4,
+      "holidaydate": "March 21 2019",
+      "day" : "Thursday",
+      "holiday": "Holi",
+      "holidaytype": "Restricted"
+    },
+    {
+      "id":5,
+      "holidaydate": "April 17 2019",
+      "day" : "Wednesday",
+      "holiday": "Mahavir Jayanti",
+      "holidaytype": "Optional"
+    },
+    {
+      "id":6,
+      "holidaydate": "April 19 2019",
+      "day" : "Friday",
+      "holiday": "Good Friday",
+      "holidaytype": "Restricted"
+    },
+    {
+      "id":7,
+      "holidaydate": "May 01 2019",
+      "day" : "Wednesday",
+      "holiday": "Maharashtra Day / Labour Day",
+      "holidaytype": "Restricted"
+    },
+    {
+      "id":8,
+      "holidaydate": "Aug 12 2019",
+      "day" : "Monday",
+      "holiday": "Bakri Id",
+      "holidaytype": "Optional"
+    },
+    {
+      "id":9,
+      "holidaydate": "Aug 15 2019",
+      "day" : "Thursday",
+      "holiday": "Independence Day / Raksha Bandhan",
+      "holidaytype": "Restricted"
+    },
+    {
+      "id":10,
+      "holidaydate": "Sept 02 2019",
+      "day" : "Monday",
+      "holiday": "Ganesh Chaturthi",
+      "holidaytype": "Restricted"
+    },
+    {
+      "id":11,
+      "holidaydate": "Sept 10 2019",
+      "day" : "Tuesday",
+      "holiday": "Muharram",
+      "holidaytype": "Optional"
+    },
+    {
+      "id":12,
+      "holidaydate": "Oct 02 2019",
+      "day" : "Wednesday",
+      "holiday": "Gandhi Jayanti",
+      "holidaytype": "Restricted"
+    },
+    {
+      "id":13,
+      "holidaydate": "Oct 08 2019",
+      "day" : "Tuesday",
+      "holiday": "Dussehra",
+      "holidaytype": "Restricted"
+    },
+    {
+      "id":14,
+      "holidaydate": "Oct 27 2019",
+      "day" : "Sunday",
+      "holiday": "Deewali",
+      "holidaytype": "Restricted"
+    },
+    {
+      "id":15,
+      "holidaydate": "Oct 29 2019",
+      "day" : "Tuesday",
+      "holiday": "Bhai Duj",
+      "holidaytype": "Restricted"
+    },
+    {
+      "id":16,
+      "holidaydate": "Dec 25 2019",
+      "day" : "Wednesday",
+      "holiday": "Christmas Day",
+      "holidaytype": "Restricted"
+    },
+    {
+      "id":17,
+      "holidaydate": "Dec 31 2019",
+      "day" : "Tuesday",
+      "holiday": "31st December",
+      "holidaytype": "Optional"
+    }
+  ]
+}

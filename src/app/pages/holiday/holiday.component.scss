@@ -1,0 +1,38 @@
+@import '../../../css/variable.scss';
+
+.table-container {
+    max-height: calc(100vh - 200px);
+}
+
+table {
+    width: 100%;
+}
+
+.mat-column-select {
+    overflow: initial;
+}
+
+/// All table fixed width for sorting unifrom when no data
+.mat-column-select {
+    padding-right: 24px;
+    max-width: 70px;
+}
+
+.mat-column-policy_number {
+    word-break: break-all;
+}
+
+.highlight-row {
+    background-color: $theme-primary-rgba;
+}
+
+.upload-document-data{
+    height: 100px;
+    overflow-y : auto;
+}
+
+
+td.mat-cell, td.mat-footer-cell, th.mat-header-cell {
+    padding: 0;
+    border-bottom-width: 0px !important;
+}

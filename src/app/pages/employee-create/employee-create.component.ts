@@ -70,7 +70,7 @@ export class EmployeeCreateComponent implements OnInit {
     this.fetchDropdownValues();
   }
 
-  filterParticular(search, type, element) {
+  filterParticular(search, type) {
     if (!search) {
       this.filteredqcDropdownValues[type] = _.cloneDeep(this.dropdownValues[type]);
       return;
