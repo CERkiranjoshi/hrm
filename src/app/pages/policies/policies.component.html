@@ -1,3 +1,58 @@
-<section class="container">
-  <app-title title="COMPANY POLICIES"></app-title>
+<section class="container" [@InOut]="'in'">
+  <section>
+    <app-title 
+      title="COMPANY POLICIES"></app-title>
+  </section>
+  <section>
+    <section class="customer-declartion policy-details" fxLayout="row">
+      <mat-card fxFlex="100">
+        <!-- <mat-card-header class="mr-0">
+          <mat-card-title>EMPLOYEE DETAILS</mat-card-title>
+        </mat-card-header> -->
+        <mat-card-content>
+          <img src="../../../assets/img/document-text-accept.svg" class="customer-declartion-img-background">
+          <form class="policy-details-form" fxLayout="column" fxLayoutAlign="center" fxLayoutGap="10px"
+            [formGroup]="policyDetails">
+            <section fxLayout="row" fxLayoutGap="20px">
+              <mat-form-field fxFlex="100">
+                <input type="text" matInput placeholder="Company Policy Name" formControlName="claimant_name" required
+                  autocomplete="off">
+                <mat-error>Invalid or Missing Company Policy Name.</mat-error>
+              </mat-form-field>
+            </section>
+            <section fxLayout="row" fxLayoutGap="20px">
+              <mat-form-field fxFlex="100" class="example-full-width">
+                <textarea matInput formControlName="claimant_address1" required placeholder="Policy description"></textarea>
+                <mat-error>Invalid or Missing Company Policy Description.</mat-error>
+              </mat-form-field>
+            </section>
+            <section fxLayout="row" fxLayoutGap="20px">
+              <mat-form-field fxFlex="100">
+                <input matInput [matDatepicker]="dpa" placeholder="Company Policy Publish Date"
+                  formControlName="claimant_doa" required autocomplete="off">
+                <mat-datepicker-toggle matSuffix [for]="dpa"></mat-datepicker-toggle>
+                <mat-datepicker #dpa></mat-datepicker>
+                <mat-hint><strong>Format must be:</strong> DD-MMM-YYYY </mat-hint>
+              </mat-form-field>
+            </section>
+            <section fxLayout="row" fxLayoutGap="20px">
+                <label>Attach Policy Document </label>
+            </section>
+            <section id="file-upload-section" fxLayout="row" fxLayoutGap="20px">
+              <section fxFlex="100">
+                  <app-material-file-upload [text]="'Document'" [defaultBrowseOpen]="false"  ></app-material-file-upload>
+              </section>
+            </section>
+          </form>
+        </mat-card-content>
+      </mat-card>
+    </section>
+    <!-- [disabled]="policyDetails.invalid || claimantDetails.invalid" (click)="saveCustomerDetails()" -->
+    <section class="container" fxLayout="row" fxFlexFill fxLayoutAlign="center center"  fxLayoutGap="40px" fxLayout.xs="column">
+      <button class="mt-10 mb-20" type="button" mat-raised-button color="primary">SAVE
+      </button>
+      <button class="mt-10 mb-20" type="button" mat-raised-button color="primary">SAVE & PUBLISH
+      </button>
+    </section>
+  </section>
 </section>

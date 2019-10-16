@@ -1,0 +1,38 @@
+.customer-declartion {
+    margin: 20px 0px;
+}
+
+.customer-declartion .mat-radio-button {
+    margin: 0 12px;
+}
+
+.customer-declartion-img-background{
+    width: 131px;
+    height: 137px;
+    object-fit: contain;
+    position: absolute;
+    right: -10px;
+    top:0px;
+    opacity: 0.9;
+}
+
+.customer-declartion{
+    position: relative;
+}
+.customer-declaration-container{
+    max-height: calc(100vh - 230px);   
+}
+
+.create-claim {
+    margin: 20px auto;
+    position: relative;
+}
+.claim-img-background{
+    width: 158px;
+    height: 137px;
+    object-fit: contain;
+    position: absolute;
+    right: -8px;
+    top:0px;
+    opacity: 0.9;
+}
