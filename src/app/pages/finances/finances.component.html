@@ -1,3 +1,18 @@
 <section class="container">
   <app-title title="FINANCE INFO"></app-title>
 </section>
+<section class="container mt-20">
+    <section fxLayout="row" fxLayoutGap="20px">
+      <section fxFlex="50">
+        <mat-list>
+          <h3 mat-subheader class="text-bold">Pay Slips</h3>
+          <mat-list-item *ngFor="let note of notes">
+            <mat-icon mat-list-icon color="primary" class="cursor-pointer">note</mat-icon>
+            <h4 mat-line>{{note.name}}</h4>
+            <p mat-line> {{note.updated | date}} </p>
+            <mat-divider></mat-divider>
+          </mat-list-item>
+        </mat-list>
+      </section>
+    </section>
+  </section>
