@@ -1,3 +1,4 @@
+import { PolicyListsComponent } from './pages/policy-lists/policy-lists.component';
 import { ApplyLeaveComponent } from './pages/apply-leave/apply-leave.component';
 import { LeaveListsComponent } from './pages/leave-lists/leave-lists.component';
 import { CompanyUsersCreateComponent } from './pages/company-users-create/company-users-create.component';
@@ -26,6 +27,7 @@ const routes: Routes = [
   { path: 'companylists', component: CompanyListsComponent,canActivate: [AuthGuard]},
   { path: 'addcompany', component: CompanyCreateComponent,canActivate: [AuthGuard]},
   { path: 'userslists', component: CompanyUsersComponent,canActivate: [AuthGuard]},
+  { path: 'policylist', component: PolicyListsComponent,canActivate: [AuthGuard]},
   { path: 'leavelists', component: LeaveListsComponent,canActivate: [AuthGuard]},
   { path: 'leaveapply', component: ApplyLeaveComponent,canActivate: [AuthGuard]},
   { path: 'adduser', component: CompanyUsersCreateComponent,canActivate: [AuthGuard]},

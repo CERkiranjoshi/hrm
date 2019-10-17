@@ -208,8 +208,16 @@
       "icon": "policy",
       "active": true,
       "restrictedUsersGroup": [
-        "employee",
         "admin"
+      ]
+    },
+    {
+      "url": "policylist",
+      "name": "Company Policies ",
+      "icon": "policy",
+      "active": true,
+      "restrictedUsersGroup": [
+        "employee"
       ]
     },
     {
