@@ -30,7 +30,7 @@
         <section>
           <h3 class="m-0"> Available leaves : 12/24</h3>
         </section>
-        <button *ngIf="authService.getUserType()=='employee'" (click)="addEmployee()" type="button" title="Add  New Employee" mat-raised-button color="accent"
+        <button *ngIf="authService.getUserType()=='employee'" (click)="leaveApply()" type="button" title="Apply For Leave" mat-raised-button color="accent"
          >
           <mat-icon>add</mat-icon>
           <span class="ml-5">Apply For Leave</span>

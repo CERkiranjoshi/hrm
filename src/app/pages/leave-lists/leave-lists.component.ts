@@ -87,8 +87,8 @@ export class LeaveListsComponent implements OnInit {
     this.getLeaveDetails();
   }
 
-  addEmployee(){
-    this.router.navigate(['/addemployee']); 
+  leaveApply(){
+    this.router.navigate(['/leaveapply']); 
   }
 
   initFilterList(filterList) {

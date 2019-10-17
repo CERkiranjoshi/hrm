@@ -27,7 +27,7 @@ const routes: Routes = [
   { path: 'addcompany', component: CompanyCreateComponent,canActivate: [AuthGuard]},
   { path: 'userslists', component: CompanyUsersComponent,canActivate: [AuthGuard]},
   { path: 'leavelists', component: LeaveListsComponent,canActivate: [AuthGuard]},
-  { path: 'applyleave', component: ApplyLeaveComponent,canActivate: [AuthGuard]},
+  { path: 'leaveapply', component: ApplyLeaveComponent,canActivate: [AuthGuard]},
   { path: 'adduser', component: CompanyUsersCreateComponent,canActivate: [AuthGuard]},
   { path: 'employees', component: HomeComponent,canActivate: [AuthGuard]},
   { path: 'dashboard', component: DashboardComponent,canActivate: [AuthGuard]},
