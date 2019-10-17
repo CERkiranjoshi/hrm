@@ -1,3 +1,133 @@
-<section class="container">
-  <app-title title="PROFILE"></app-title>
-</section>
+<section class="container" [@InOut]="'in'">
+    <section>
+      <app-title title="PROFILE"></app-title>
+    </section>
+    <section>
+      <section class="customer-declartion policy-details" fxLayout="row">
+        <mat-card fxFlex="100">
+          <!-- <mat-card-header class="mr-0">
+            <mat-card-title>EMPLOYEE DETAILS</mat-card-title>
+          </mat-card-header> -->
+          <mat-card-content>
+            <img src="../../../assets/img/document-text-accept.svg" class="customer-declartion-img-background">
+            <form class="policy-details-form" fxLayout="column" fxLayoutAlign="center" fxLayoutGap="10px"
+              [formGroup]="policyDetails">
+              <section fxLayout="row" fxLayoutGap="20px">
+                  <mat-form-field fxFlex="100">
+                    <input type="text" matInput placeholder="Employee ID" formControlName="employee_id" required readonly
+                      autocomplete="off">
+                    <mat-error>Invalid or Missing Employee ID.</mat-error>
+                  </mat-form-field>
+                </section>
+              <section fxLayout="row" fxLayoutGap="20px">
+                <mat-form-field fxFlex="50">
+                  <input type="text" matInput placeholder="Employee name" formControlName="employee_name" required readonly
+                    autocomplete="off">
+                  <mat-error>Invalid or Missing Employee name.</mat-error>
+                </mat-form-field>
+                <mat-form-field fxFlex="50">
+                  <mat-label>Department</mat-label>
+                  <mat-select formControlName="department" required disabled>
+                    <mat-option *ngFor="let item of dropdownValues.department" [value]="item">
+                      {{item}}
+                    </mat-option>
+                  </mat-select>
+                  <mat-error>Please select Department manager.</mat-error>
+                </mat-form-field>
+              </section>
+              <section fxLayout="row" fxLayoutGap="20px">
+                <!-- (optionSelected)="particularMappingSelected($event)" -->
+                <mat-form-field fxFlex="50">
+                    <input type="text" matInput placeholder="Reporting Manager" formControlName="reporting_manager" required readonly
+                      autocomplete="off">
+                </mat-form-field>
+                <mat-form-field fxFlex="50">
+                  <mat-label>Position</mat-label>
+                  <mat-select formControlName="roles" required disabled>
+                    <mat-option *ngFor="let item of dropdownValues.roles" [value]="item">
+                      {{item}}
+                    </mat-option>
+                  </mat-select>
+                  <mat-error>Please select reporting manager.</mat-error>
+                </mat-form-field>
+              </section>
+              <section fxLayout="row" fxLayoutGap="20px">
+                <mat-form-field fxFlex="50">
+                  <input type="email" matInput placeholder="Personal Email address" formControlName="employee_email" required
+                    autocomplete="off">
+                  <mat-error>Invalid or Missing email address.</mat-error>
+                </mat-form-field>
+                <mat-form-field fxFlex="50">
+                  <input type="text" matInput maxlength="10" placeholder="Employee phone number"
+                    formControlName="employee_phone" required autocomplete="off">
+                  <mat-error>Invalid or Missing phone number.</mat-error>
+                </mat-form-field>
+              </section>
+              <mat-form-field>
+                <input type="text" matInput placeholder="Employee address line 1" formControlName="claimant_address1"
+                  required autocomplete="off">
+                <mat-error>Invalid or Missing Employee address line 1.</mat-error>
+              </mat-form-field>
+              <mat-form-field>
+                <input type="text" matInput placeholder="Employee address line 2" formControlName="claimant_address2"
+                  required autocomplete="off">
+                <mat-error>Invalid or Missing Employee address line 2.</mat-error>
+              </mat-form-field>
+              <section fxLayout="row" fxLayoutGap="20px">
+                <mat-form-field fxFlex="33.33">
+                  <mat-label>Select state</mat-label>
+                  <mat-select formControlName="claimant_state" required>
+                    <mat-option *ngFor="let item of dropdownValues.state" [value]="item">
+                      {{item}}
+                    </mat-option>
+                  </mat-select>
+                  <mat-error>Missing state.</mat-error>
+                </mat-form-field>
+                <mat-form-field fxFlex="33.33">
+                  <input type="text" matInput placeholder="City" formControlName="claimant_city" required
+                    autocomplete="off">
+                  <mat-error>Missing city.</mat-error>
+                </mat-form-field>
+                <mat-form-field fxFlex="33.33">
+                  <input #postalCode maxlength="6" ype="text" matInput placeholder="Pincode"
+                    formControlName="claimant_pincode" required autocomplete="off">
+                  <mat-error>Invalid or Missing pincode.</mat-error>
+                  <mat-hint align="end">{{postalCode.value.length}} / 6</mat-hint>
+                </mat-form-field>
+              </section>
+              <section fxLayout="row" fxLayoutGap="20px">
+                <mat-form-field fxFlex="33.33">
+                  <input matInput [max]="maxDate" [matDatepicker]="dpa" placeholder="Date of Joining"
+                    formControlName="claimant_doa" required readonly autocomplete="off">
+                  <mat-datepicker-toggle matSuffix [for]="dpa"></mat-datepicker-toggle>
+                  <mat-datepicker #dpa></mat-datepicker>
+                  <mat-hint><strong>Format must be:</strong> DD-MMM-YYYY </mat-hint>
+                </mat-form-field>
+                <mat-form-field fxFlex="33.33">
+                  <input type="text" matInput placeholder="Employee age" maxlength="3" formControlName="employee_age"
+                    required autocomplete="off">
+                  <mat-error>Invalid or Missing age.</mat-error>
+                </mat-form-field>
+                <section fxFlex="33.33" class="mt-25 mb-20">
+                 
+                </section>
+              </section>
+              <section fxLayout="row" fxLayoutGap="20px">
+                  <label>Documents </label>
+              </section>
+              <section id="file-upload-section" fxLayout="row" fxLayoutGap="20px">
+                <section fxFlex="100">
+                    <app-material-file-upload [text]="'Document'" [defaultBrowseOpen]="false"  ></app-material-file-upload>
+                </section>
+              </section>
+            </form>
+          </mat-card-content>
+        </mat-card>
+      </section>
+      <!-- [disabled]="policyDetails.invalid || claimantDetails.invalid" (click)="saveCustomerDetails()" -->
+      <section class="container" fxLayout="row" fxFlexFill fxLayoutAlign="center center" fxLayout.xs="column">
+        <button class="mt-10 mb-20" type="button" mat-raised-button color="primary">UPDATE DETAILS
+        </button>
+      </section>
+    </section>
+  </section>
