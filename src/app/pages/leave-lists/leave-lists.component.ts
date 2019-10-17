@@ -11,11 +11,11 @@ import * as moment from 'moment';
 import * as _ from 'lodash';
 
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss']
+  selector: 'app-leave-lists',
+  templateUrl: './leave-lists.component.html',
+  styleUrls: ['./leave-lists.component.scss']
 })
-export class HomeComponent implements OnInit {
+export class LeaveListsComponent implements OnInit {
 
   pageConfigData: any;
   organisationData: any;
@@ -84,7 +84,7 @@ export class HomeComponent implements OnInit {
   }
 
   ngAfterViewInit() {
-    this.getEmployeeDetails();
+    this.getLeaveDetails();
   }
 
   addEmployee(){
@@ -92,6 +92,7 @@ export class HomeComponent implements OnInit {
   }
 
   initFilterList(filterList) {
+    return;
     this.filterList.sortBy = filterList.sort_by;
     this.filterList.sortOrder = filterList.sort_order;
     this.filterList.limit = filterList.limit;
@@ -166,13 +167,13 @@ export class HomeComponent implements OnInit {
     this.filterList.offset = 0;
     this.filterList.limit = this.pageSize;
     this.pageIndex = 0;
-    this.getEmployeeDetails();
+    this.getLeaveDetails();
   }
 
-  getEmployeeDetails() {
+  getLeaveDetails() {
     const query = this.commonService.generateURL(this.user, this.filterList);
     this.loadingFullScreenService.startLoading();
-    this.apiService.getEmployeeDetails(query)
+    this.apiService.getLeaveDetails(query)
       .subscribe(
         (response: any) => {
           this.dataSource = new MatTableDataSource(response.data);
@@ -202,7 +203,7 @@ export class HomeComponent implements OnInit {
     this.filterList.sortBy = column.key;
     this.filterList.sortOrder = sortOrder;
     this.filterList.sortName = column.name;
-    this.getEmployeeDetails();
+    this.getLeaveDetails();
   };
 
   filterData(column, displayValue, actualValue = "") {
@@ -258,7 +259,7 @@ export class HomeComponent implements OnInit {
     this.filterList.limit = (data.pageIndex + 1) * data.pageSize;
     this.pageSize = data.pageSize;
     this.pageIndex = data.pageIndex;
-    this.getEmployeeDetails();
+    this.getLeaveDetails();
   };
 
   removeFilter(index) {

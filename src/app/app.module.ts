@@ -51,6 +51,8 @@ import { CompanyListsComponent } from './pages/company-lists/company-lists.compo
 import { CompanyCreateComponent } from './pages/company-create/company-create.component';
 import { CompanyUsersComponent } from './pages/company-users/company-users.component';
 import { CompanyUsersCreateComponent } from './pages/company-users-create/company-users-create.component';
+import { LeaveListsComponent } from './pages/leave-lists/leave-lists.component';
+import { ApplyLeaveComponent } from './pages/apply-leave/apply-leave.component';
 
 
 const globalRippleConfig: RippleGlobalOptions = {
@@ -100,6 +102,8 @@ const MY_FORMATS = {
     CompanyCreateComponent,
     CompanyUsersComponent,
     CompanyUsersCreateComponent,
+    LeaveListsComponent,
+    ApplyLeaveComponent,
   ],
   imports: [
     BrowserModule,

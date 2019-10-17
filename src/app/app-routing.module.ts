@@ -1,3 +1,5 @@
+import { ApplyLeaveComponent } from './pages/apply-leave/apply-leave.component';
+import { LeaveListsComponent } from './pages/leave-lists/leave-lists.component';
 import { CompanyUsersCreateComponent } from './pages/company-users-create/company-users-create.component';
 import { CompanyUsersComponent } from './pages/company-users/company-users.component';
 import { CompanyCreateComponent } from './pages/company-create/company-create.component';
@@ -19,11 +21,13 @@ import { LoginComponent } from './auth/login/login.component';
 import { PageNotFoundComponent } from './common/component/page-not-found/page-not-found.component';
 import { AuthGuard } from './auth/auth.guard';
 
-const routes: Routes = [
+const routes: Routes = [ 
   { path: 'login', component: LoginComponent, data: { animation: 'login' } },
   { path: 'companylists', component: CompanyListsComponent,canActivate: [AuthGuard]},
   { path: 'addcompany', component: CompanyCreateComponent,canActivate: [AuthGuard]},
   { path: 'userslists', component: CompanyUsersComponent,canActivate: [AuthGuard]},
+  { path: 'leavelists', component: LeaveListsComponent,canActivate: [AuthGuard]},
+  { path: 'applyleave', component: ApplyLeaveComponent,canActivate: [AuthGuard]},
   { path: 'adduser', component: CompanyUsersCreateComponent,canActivate: [AuthGuard]},
   { path: 'employees', component: HomeComponent,canActivate: [AuthGuard]},
   { path: 'dashboard', component: DashboardComponent,canActivate: [AuthGuard]},

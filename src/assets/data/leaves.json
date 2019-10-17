@@ -1,0 +1,113 @@
+{
+  "data": [
+    {
+      "id":1,
+      "leave_type": "Earned Leave",
+      "from_date" : "12 june 2019",
+      "to_date": "14 june 2019",
+      "total_days": "3",
+      "status": "rejected",
+      "comment": "Casual vacation"
+    },
+    {
+      "id":2,
+      "leave_type": "Earned Leave",
+      "from_date" : "12 june 2019",
+      "to_date": "14 june 2019",
+      "total_days": "3",
+      "status": "rejected",
+      "comment": "Casual vacation"
+    },
+    {
+      "id":3,
+      "leave_type": "Earned Leave",
+      "from_date" : "12 june 2019",
+      "to_date": "14 june 2019",
+      "total_days": "3",
+      "status": "rejected",
+      "comment": "Casual vacation"
+    },
+    {
+      "id":4,
+      "leave_type": "Earned Leave",
+      "from_date" : "12 june 2019",
+      "to_date": "14 june 2019",
+      "total_days": "3",
+      "status": "rejected",
+      "comment": "Casual vacation"
+    },
+    {
+      "id":5,
+      "leave_type": "Earned Leave",
+      "from_date" : "12 june 2019",
+      "to_date": "14 june 2019",
+      "total_days": "3",
+      "status": "rejected",
+      "comment": "Casual vacation"
+    },
+    {
+      "id":6,
+      "leave_type": "Earned Leave",
+      "from_date" : "12 june 2019",
+      "to_date": "14 june 2019",
+      "total_days": "3",
+      "status": "rejected",
+      "comment": "Casual vacation"
+    },
+    {
+      "id":7,
+      "leave_type": "Earned Leave",
+      "from_date" : "12 june 2019",
+      "to_date": "14 june 2019",
+      "total_days": "3",
+      "status": "rejected",
+      "comment": "Casual vacation"
+    },
+    {
+      "id":8,
+      "leave_type": "Earned Leave",
+      "from_date" : "12 june 2019",
+      "to_date": "14 june 2019",
+      "total_days": "3",
+      "status": "rejected",
+      "comment": "Casual vacation"
+    },
+    {
+      "id":9,
+      "leave_type": "Earned Leave",
+      "from_date" : "12 june 2019",
+      "to_date": "14 june 2019",
+      "total_days": "3",
+      "status": "rejected",
+      "comment": "Casual vacation"
+    },
+    {
+      "id":10,
+      "leave_type": "Earned Leave",
+      "from_date" : "12 june 2019",
+      "to_date": "14 june 2019",
+      "total_days": "3",
+      "status": "rejected",
+      "comment": "Casual vacation"
+    },
+    {
+      "id":11,
+      "leave_type": "Earned Leave",
+      "from_date" : "12 june 2019",
+      "to_date": "14 june 2019",
+      "total_days": "3",
+      "status": "rejected",
+      "comment": "Casual vacation"
+    },
+    {
+      "id":12,
+      "leave_type": "Earned Leave",
+      "from_date" : "12 june 2019",
+      "to_date": "14 june 2019",
+      "total_days": "3",
+      "status": "rejected",
+      "comment": "Casual vacation"
+    }
+
+  ]
+}
